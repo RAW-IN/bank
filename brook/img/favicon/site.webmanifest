@@ -1,6 +1,7 @@
 {
     "name": "Intertidal ✱ River to river",
     "short_name": "Intertidal",
+    "start_url": "https://river.to/intertidal/",
     "icons": [
         {
             "src": "android-chrome-192x192.png",
