@@ -2363,24 +2363,27 @@ button {
 
 .block-article__body .footer-notes,
 .block-article__body .block-article-grid__text ol {
-    margin: 0 0 20px;
-    padding-left: 14px
+    /* margin: 0 0 20px;
+    padding-left: 14px */
+    padding-left: 1em;
 }
 
 .block-article__body .footer-notes li,
 .block-article__body .block-article-grid__text ol li {
-    ;
-    font-size: 12px;
-    font-weight: normal;
-    line-height: 1.33;
-    margin-bottom: 4px;
-    padding-left: 8px;
+        /* font-size: inherit; */
+    /* font-weight: inherit; */
+    /* line-height: 1.33; */
+    /* margin-bottom: 4px; */
+    /* padding-left: 8px; */
     list-style: decimal;
-    list-style-position: outside
+    list-style-position: outside;
+    font: var(--text-font);
 }
 
+
+
 .block-article__body .block-article-grid__text p.normal-moins {
-    ;
+   
     margin-bottom: 4px;
     font-size: 12px;
     font-weight: normal;
