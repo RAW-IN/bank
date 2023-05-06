@@ -7189,6 +7189,8 @@ img.lazyloaded {
     --color-primary-rgb: 96 0 255;
     --color-primary: rgb(var(--color-primary-rgb));
 
+    --color-dynamic: var(--color-primary-rgb);
+
 
 
      --bg-surface: rgb(var(--color-primary-rgb) / 0.05);
@@ -7271,6 +7273,7 @@ img.lazyloaded {
 
     --color-primary-rgb: 147 120 255;
     --color-primary: rgb(var(--color-primary-rgb));
+    --color-dynamic: var(--color-primary-rgb);
    
     --color-sec: #8ddb4e;
     --color-ter: #A5A1FF;
@@ -7739,5 +7742,5 @@ svg.masthead {
 }
 
 .WKVuH6d9Tq {
-    color: #ad2a56;
+    color: var(--color-dynamic);
 }
