@@ -7189,7 +7189,7 @@ img.lazyloaded {
     --color-primary-rgb: 96 0 255;
     --color-primary: rgb(var(--color-primary-rgb));
 
-    --color-dynamic: var(--color-primary);
+    
 
 
 
@@ -7273,7 +7273,7 @@ img.lazyloaded {
 
     --color-primary-rgb: 147 120 255;
     --color-primary: rgb(var(--color-primary-rgb));
-    --color-dynamic: var(--color-primary);
+    
    
     --color-sec: #8ddb4e;
     --color-ter: #A5A1FF;
