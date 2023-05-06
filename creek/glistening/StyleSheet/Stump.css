@@ -7724,6 +7724,16 @@ svg.masthead {
     transform: translate(-50%, -50%);
 }
 
-/*22222222222222222222*/
+.l-hidden {
+    display: none;
+}
 
-/*11111111111111*/
+@media only screen and (max-width: 1200px) {
+    .l-hidden {
+    display: inline-block;
+}
+}
+
+
+
+
