@@ -3549,13 +3549,13 @@ button {
 }
 
 .block-cover .component-card.image-background {
-    /*padding-top: 48%;*/
+    padding-top: 48%;
     aspect-ratio: 100 / 48;
 }
 
 @media only screen and (max-width:1024px) {
     .block-cover .component-card.image-background {
-        /*padding-top: 72%;*/
+        padding-top: 72%;
         aspect-ratio: 100 / 72;
     }
 }
@@ -3566,14 +3566,14 @@ button {
     }
 
     .block-cover .component-card.image-background {
-        /*padding-top: 65%*/
+        padding-top: 65%;
         aspect-ratio: 100 / 65;
     }
 }
 
 @media only screen and (max-width:428px) {
     .block-cover .component-card.image-background {
-        /*padding-top: 120%;*/
+        padding-top: 120%;
         aspect-ratio: 100 / 120;
     }
 }
@@ -4946,7 +4946,7 @@ body.masthead-visible .masthead-container {
 .component-card.small-card>picture,
 .component-card.small-card .component-card__video--container {
     position: relative;
-    /*padding-top: 125%;*/
+    padding-top: 125%;
     margin-bottom: 20px;
     aspect-ratio: 100 / 125
 }
@@ -7303,12 +7303,12 @@ img.lazyloaded {
         fill: var(--text-color-h1);
 }
 
-@media screen and (min-width:1201px) {
 
-    .logo-Intertidal {
-        /*font-size: 160px;*/
+
+@media screen and (max-width:1200px) {
+    .logo-Intertidal svg {
+        height: clamp(2.25rem, 1.7649rem + 1.8135vw, 3.125rem);
     }
-
 }
 
 
