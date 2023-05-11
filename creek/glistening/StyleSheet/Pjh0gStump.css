@@ -3578,6 +3578,11 @@ button {
     }
 }
 
+.component-card.image-background.square {
+    aspect-ratio: 1;
+    padding-top: 100%;
+}
+
 .block-footer {
     background-color: #000;
     color: #fff;
