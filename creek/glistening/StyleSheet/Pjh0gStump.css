@@ -7183,6 +7183,7 @@ img.lazyloaded {
 --bw: #fff;
 --wb: #000;
 --card-number: var(--wb);
+--card-number: var(--color-primary);
 --line-light: #BFBDBB;
 --text-color-h1: var(--text-color);
 --text-color-h2: var(--text-color);
