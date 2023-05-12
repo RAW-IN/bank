@@ -7269,8 +7269,11 @@ img.lazyloaded {
         --color-primary-omplementary: #ffd423;
         --img-dar: grayscale(10%) saturate(90%) brightness(80%) contrast(90%);
         --bw: #000;
+
 --card-number: var(--text-color-h1);
-    --card-numx: difference;
+--card-number: #141414;
+--card-numx: difference;
+--card-numx: normal;
 
     --line-light: #6E6E6E;
     --gradient-h2: linear-gradient(66deg,var(--text-color) 0%, var(--text-color-h2) 38%,#363638 100%);
