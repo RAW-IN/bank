@@ -4795,7 +4795,7 @@ body.masthead-visible .masthead-container {
 .component-card__content--date {
     position: absolute;
     color: var(--card-number);
-    mix-blend-mode: var(--card-numx);
+    /* mix-blend-mode: var(--card-numx); */
     z-index: 2
 }
 
@@ -7272,8 +7272,7 @@ img.lazyloaded {
 
 --card-number: var(--text-color-h1);
 --card-number: #141414;
---card-numx: difference;
---card-numx: normal;
+
 
     --line-light: #6E6E6E;
     --gradient-h2: linear-gradient(66deg,var(--text-color) 0%, var(--text-color-h2) 38%,#363638 100%);
