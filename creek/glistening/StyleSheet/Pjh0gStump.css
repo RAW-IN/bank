@@ -4802,6 +4802,8 @@ body.masthead-visible .masthead-container {
 }
 
 
+
+
 .component-card__content--date {
     font-weight: 300;
     color: var(--text-color);
@@ -7168,66 +7170,56 @@ img.lazyloaded {
 
 :root {
     --color-mode: "light";
-    --bg: #f1ede8;
-    --bg: #f5f2ed;
     --bg: #F7F4F1;
-    --text-color: #1c1b1e;
     --text-color: #292929;
     --text-color-sub: #6d6d70;
+
+    --color-primary-rgb: 96 0 255;
+    --color-primary: rgb(var(--color-primary-rgb));
+    --bg-surface: rgb(var(--color-primary-rgb) / 0.05);
+    --color-primary-omplementary: #F0E846;
+    --line-light: #BFBDBB;
+
+--bw: #fff;
+--wb: #000;
+--card-number: var(--wb);
+--card-number: var(--color-primary);
+
+--color-hover: #4CFF8E;
+    --color-hover: #fcbb4a;
+
     --text-font-family: "Sand", "Sand SC", "Segoe UI", "Helvetica Neue", Arial, "Hiragino Sans GB", "PingFang SC", "Heiti SC", "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
     --text-font-weight: 300;
     /*428 1440*/
     --text-font-size: clamp(1.375rem, 1.2957rem + 0.2964vw, 1.5625rem);
     --text-font: var(--text-font-weight) var(--text-font-size)/1.58 var(--text-font-family);
 
-    --text-font-weight-h2: 600;
-    --text-font-h2: var(--text-font-weight-h2) clamp(1.6875rem, 1.5553rem + 0.4941vw, 2rem)/1.58 var(--text-font-family);
---bw: #fff;
---wb: #000;
---card-number: var(--wb);
---card-number: var(--color-primary);
---line-light: #BFBDBB;
---text-color-h1: var(--text-color);
+   
+    --header-font-family: "River Flow", var(--text-font-family);
+    --text-color-h1: var(--text-color);
+
+    
+    --text-font-h2: var(--text-font-weight-h2) clamp(1.6875rem, 1.5553rem + 0.4941vw, 2rem)/1.58 var(--text-font-family);   
 --text-color-h2: var(--text-color);
+--text-font-weight-h2: 600;
 --gradient-h2: linear-gradient(137deg, var(--text-color-h2) 0%, rgb(200, 200, 200) 106%, rgb(220, 220, 220) 109%, rgb(200, 200, 200) 112%, rgb(91, 90, 90) 100%);
 --gradient-listrong: linear-gradient(90deg, #6000ff, #6313ff, #671eff, #6a27ff, #6d2eff, #7135ff, #743bff, #7741ff);
 
 
- 
+--featured-caing:0 0 143;
+
+
+
+  
+
     
 
 
-    --color-primary-rgb: 96 0 255;
-    --color-primary: rgb(var(--color-primary-rgb));
-
-    
-
-
-
-     --bg-surface: rgb(var(--color-primary-rgb) / 0.05);
-    --color-primary-omplementary: #F0E846;
-
-
-
-    --header-font-family: "River Flow", var(--text-font-family);
-
-
-
-
-
-    --color-sec: rgb(168, 248, 103);
-    --color-ter: #6001ff;
-    --color-hover: #4CFF8E;
-    --color-hover: #fcbb4a;
-
-
-    --outline: #74796d;
-    --radius-d: clamp(1.5rem, 0.9153rem + 1.9531vw, 2.125rem);
-    --bw: #000;
-    --wb: #fff;
-    --bg-linear: linear-gradient(180deg, rgba(250, 227, 218, 0) 0%, rgba(255, 235, 202, .6) 15%);
-    --bg-linend: #fcf0da;
-    --hide-l: none;
+   
+   
+  
+  
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -7273,7 +7265,7 @@ img.lazyloaded {
         --bw: #000;
 
 --card-number: var(--text-color-h1);
---card-number: #141414;
+--card-number: #1b1b1b;
 
 
     --line-light: #6E6E6E;
@@ -7300,6 +7292,25 @@ img.lazyloaded {
     --bg-linear: none;
     --bg-linend: var(--bg);
     --hide-l: block;
+
+
+
+
+
+
+    --featured-caing:191, 194, 255;
+
+
+
+    
+
+
+
+
+
+
+
+
 }
 
 
@@ -7757,4 +7768,8 @@ svg.masthead {
 
 .WKVuH6d9Tq {
     color: var(--color-dynamic);
+}
+
+.category-cig3x6pxly .component-card__number {
+    color: var(--featured-caing);
 }
