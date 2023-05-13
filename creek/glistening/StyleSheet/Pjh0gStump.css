@@ -2181,7 +2181,8 @@ button {
 .block-article__title {
     font: 600 clamp(1.9375rem, 1.4353rem + 1.8775vw, 3.125rem)/1.38 var(--text-font-family);
     margin-bottom: 30px;
-    color: var(--text-color-h1)
+    color: var(--text-color-h1);
+    word-break: keep-all;
 }
 
 .block-article__cat-and-date {
@@ -2346,6 +2347,7 @@ button {
     -webkit-background-clip: text;
     background-clip: text;
     background-image: var(--gradient-h2);
+    word-break: keep-all
 
 }
 
@@ -7750,6 +7752,7 @@ svg.masthead {
 
 .nowrap {
     white-space: nowrap;
+    font: inherit;
 }
 
 .WKVuH6d9Tq {
