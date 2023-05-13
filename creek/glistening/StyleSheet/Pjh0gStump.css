@@ -7771,5 +7771,5 @@ svg.masthead {
 }
 
 .category-cig3x6pxly .component-card__number {
-    color: var(--featured-caing);
+    --color-primary-rgb: var(--featured-caing);
 }
