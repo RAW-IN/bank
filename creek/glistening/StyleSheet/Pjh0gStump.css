@@ -4796,13 +4796,15 @@ body.masthead-visible .masthead-container {
 .component-card__number,
 .component-card__content--date {
     position: absolute;
-    color: var(--card-number);
+    color: var(--wb);
     /* mix-blend-mode: var(--card-numx); */
     z-index: 2
 }
 
-
-
+.post-template-glistening-bog .component-card__number,
+.post-template-glistening-bog .component-card__content--date {
+    color: var(--card-number-post);
+}
 
 .component-card__content--date {
     font-weight: 300;
@@ -7191,10 +7193,10 @@ img.lazyloaded {
     --color-primary-omplementary: #F0E846;
     --line-light: #BFBDBB;
 
---bw: #fff;
---wb: #000;
---card-number: var(--wb);
---card-number: var(--color-primary);
+--bw: #000;
+--wb: #fff;
+--card-number-post: var(--wb);
+--card-number-post: var(--color-primary);
 
 --color-hover: #4CFF8E;
     --color-hover: #fcbb4a;
@@ -7275,8 +7277,8 @@ img.lazyloaded {
         --img-dar: grayscale(10%) saturate(90%) brightness(80%) contrast(90%);
         --bw: #000;
 
---card-number: var(--text-color-h1);
---card-number: #1b1b1b;
+--card-number-post: var(--text-color-h1);
+--card-number-post: #1b1b1b;
 
 
     --line-light: #6E6E6E;
