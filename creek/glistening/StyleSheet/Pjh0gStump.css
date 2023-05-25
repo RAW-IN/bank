@@ -7334,7 +7334,7 @@ img.lazyloaded {
 
     --color-primary-rgb: 147 120 255;
     --color-primary: rgb(var(--color-primary-rgb));
-    --bg-tertiary: #2F2F2F;
+    --bg-tertiary: #252525;
    
    
     --color-sec: #8ddb4e;
@@ -7996,51 +7996,5 @@ svg.squiggle-inserted use {
     font-size: clamp(1.5rem, 1.3678rem + 0.4941vw, 1.8125rem);
 }
 
-.card6Uwx8f {
-    border-top: 4px solid var(--color-primary);
-    background-color: var(--bg-tertiary);
-
-    padding: 1.68em 1.28em 1em 1.28em;
-}
-
-.card6Uwx8f p {
-    font-size: 90%;
-    margin: 1em 0;
-}
-
-.block-article-grid__text .card6Uwx8f ol,
-.block-article-grid__text .card6Uwx8f ul {
-    margin: 1em;
-}
-
-.block-article-grid__text .card6Uwx8f ol li,
-.block-article-grid__text .card6Uwx8f ul li {
-    padding-left: .28em;
-    font-size: 90%;
-}
-
-.card6Uwx8f h3 {
-    font-size: clamp(1.4375rem, 1.3053rem + 0.4941vw, 1.75rem);
-}
-
-.card6Uwx8f .WKVuH6d9Tq {
-    font-size: var(--text-font-size);
-}
-
-.card6Uwx8f .WKVuH6d9Tq {
-    font-weight: 400;
-    margin-top: 1.28em;
-}
-
-@media screen and (max-width: 1024px) {
-    .card6Uwx8f {
-        padding: 1.68em 1em;
-    }
-
-    .block-article-grid__text .card6Uwx8f ol li,
-    .block-article-grid__text .card6Uwx8f ul li {
-        padding-left: 0;
-    }
-}
 
 
