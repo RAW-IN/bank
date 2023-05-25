@@ -7334,6 +7334,7 @@ img.lazyloaded {
 
     --color-primary-rgb: 147 120 255;
     --color-primary: rgb(var(--color-primary-rgb));
+    --bg-surface:var(--bg-tertiary);
     --bg-tertiary: #252525;
    
    
@@ -7984,7 +7985,7 @@ svg.squiggle-inserted {
 }
 
 svg.squiggle-inserted use {
-    stroke: currentColor;
+    stroke: var(--color-primary);
     stroke-width: 2;
     stroke-linecap: round;
 }
