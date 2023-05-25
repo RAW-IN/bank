@@ -4806,6 +4806,10 @@ body.masthead-visible .masthead-container {
     background-color: var(--bg-tertiary);
 }
 
+.block-article__main-content .covered {
+    background-color: unset;
+}
+
 
 
 .component-card .saturate {
@@ -7332,6 +7336,7 @@ img.lazyloaded {
     --color-primary: rgb(var(--color-primary-rgb));
     --bg-tertiary: #2F2F2F;
    
+   
     --color-sec: #8ddb4e;
     --color-ter: #A5A1FF;
     --color-hover: #FFF480;
@@ -7993,7 +7998,8 @@ svg.squiggle-inserted use {
 
 .card6Uwx8f {
     border-top: 4px solid var(--color-primary);
-    background-color: var(--bg-bubble);
+    background-color: var(--bg-tertiary);
+
     padding: 1.68em 1.28em 1em 1.28em;
 }
 
