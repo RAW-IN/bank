@@ -1009,7 +1009,7 @@ p {
 .component-wrapper {
     max-width: 1680px;
     margin: 0 auto;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 
@@ -2341,6 +2341,7 @@ p[lang='en'] cite
     color: currentColor;
     text-decoration: underline;
     text-underline-offset: 4px;
+    font: inherit;
 
     text-underline-offset: .158em;
 }
@@ -2371,7 +2372,7 @@ p[lang='en'] cite
     -webkit-background-clip: text;
     background-clip: text;
     background-image: var(--gradient-h2);
-    word-break: keep-all
+ 
 
 }
 
@@ -4835,7 +4836,7 @@ body.masthead-visible .masthead-container {
 }
 
 .post-template-glistening-bog .component-card__number {
-    color: var(--card-number-post);
+    color: var(--color-primary);
 }
 
 .component-card__content--date {
@@ -7223,19 +7224,29 @@ img.lazyloaded {
     --bg: rgb(var(--bg-rgb));
     --text-color: #292929;
     --text-color-sub: #6d6d70;
-
-    --color-primary-rgb: 96 0 255;
+    
+    --feature: 96 0 255;
+    --color-primary-rgb: var(--feature);
     --color-primary: rgb(var(--color-primary-rgb));
     --bg-surface: rgb(var(--color-primary-rgb) / 0.05);
+    --bg-bubble: var(--bg-surface);
     --bg-tertiary: #E1E0E0;
+    
 
     --color-primary-omplementary: #F0E846;
     --line-light: #BFBDBB;
 
 --bw: #000;
 --wb: #fff;
---card-number-post: var(--wb);
---card-number-post: var(--color-primary);
+/*--card-number-post: var(--wb);*/
+/*--card-number-post: var(--color-primary);*/
+
+--mark-col: springgreen;
+--mark-cod: bisque;
+--mark-color: var(--mark-col);
+
+--wsj-chart:var(--wsj-charl);
+--wsj-charl:#af9e65;
 
 --color-hover: #4CFF8E;
     --color-hover: #fcbb4a;
@@ -7261,6 +7272,7 @@ img.lazyloaded {
 
 
 --featured-caing:0 0 143;
+--featured-wsj:2 116 182;
 
 
 
@@ -7319,8 +7331,8 @@ img.lazyloaded {
         --img-dar: grayscale(10%) saturate(90%) brightness(80%) contrast(90%);
         --bw: #000;
 
---card-number-post: var(--text-color-h1);
---card-number-post: #0f0f0f;
+/*--card-number-post: var(--text-color-h1);*/
+/*--card-number-post: #0f0f0f;*/
 
 
     --line-light: #6E6E6E;
@@ -7331,12 +7343,15 @@ img.lazyloaded {
 
 
 
-
-    --color-primary-rgb: 147 120 255;
+--featured: 147 120 255;
+    --color-primary-rgb: var(--featured);
     --color-primary: rgb(var(--color-primary-rgb));
     --bg-surface:var(--bg-tertiary);
-    --bg-tertiary: #252525;
-   
+    --bg-bubble: var(--bg-bubbled);
+    --bg-tertiary: #282828;
+    --mark-color: var(--mark-cod);
+    --wsj-chart:var(--wsj-chard);
+    --wsj-chard:#816d4d;
    
     --color-sec: #8ddb4e;
     --color-ter: #A5A1FF;
@@ -7356,7 +7371,8 @@ img.lazyloaded {
 
 
 
-    --featured-caing:191, 194, 255;
+    --featured-caing:73 80 197;
+    --featured-wsj:152 203 255;
 
 
 
@@ -7998,4 +8014,78 @@ svg.squiggle-inserted use {
 }
 
 
+.HcugArmC5Z {
+    border-radius: 26px 26px 26px 0;
+    background-color: var(--bg-tertiary);
+    padding: 1em;
+    display: inline-block;
+    margin: 0 !important;
+}
 
+
+mark {
+    --mark-bg-height: 100%;
+    all: unset;
+    background-color: transparent;
+    background-image: linear-gradient(var(--mark-color), var(--mark-color));
+    color: #1b1b1b;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 var(--mark-bg-height);
+    -webkit-animation: mark-highlight 800ms 1 ease-out;
+    animation: mark-highlight 800ms 1 ease-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+
+@-webkit-keyframes mark-highlight {
+    to {
+        background-size: 100% var(--mark-bg-height);
+    }
+}
+
+
+@keyframes mark-highlight {
+    to {
+        background-size: 100% var(--mark-bg-height);
+    }
+}
+
+.block-article-grid__chart--wrapper.wsj-chart {
+    font-family: "Retina Narrow";
+    font-size: 13px;
+            position: relative;
+            clear: both;
+          
+            margin: 1.68em 0;
+           
+        }
+
+        .highcharts-container * {
+            font-family: "Retina Narrow";
+
+                   
+                }
+    
+    @media (min-width: 640px) {
+        .block-article-grid__chart--wrapper.wsj-chart {
+           
+           
+            float: left;
+            margin: 6px 1.68em .28em 0;
+            width: 300px;
+        }
+    }
+
+    rect.highcharts-plot-borde,
+rect.highcharts-plot-background,
+rect.highcharts-background {
+    fill: transparent !important
+}
+
+svg.highcharts-root {
+    fill: none !important
+}
