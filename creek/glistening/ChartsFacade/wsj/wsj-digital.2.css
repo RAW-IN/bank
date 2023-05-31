@@ -3223,7 +3223,7 @@ rect.highcharts-background {
 
  .wsj-digital .stacked rect.highcharts-point {
      stroke-width: 1px;
-     stroke: #fff;
+     stroke: rgba(0, 0, 0, 0);
  }
 
  .wsj-digital .highcharts-dense-data.stacked rect.highcharts-point {
@@ -3443,3 +3443,7 @@ rect.highcharts-background {
  text[text-anchor=start] {
      fill: var(--text-color) !important
  }
+
+ .wsj-digital .highcharts-column-series {
+    filter: var(--img-dar);
+}
