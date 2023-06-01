@@ -3444,6 +3444,8 @@ rect.highcharts-background {
      fill: var(--text-color) !important
  }
 
- .wsj-digital .highcharts-column-series {
+path.highcharts-graph,
+.wsj-digital .highcharts-bar-series,
+.wsj-digital .highcharts-column-series {
     filter: var(--img-dar);
 }
