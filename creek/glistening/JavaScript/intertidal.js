@@ -8762,136 +8762,38 @@ mazarineWebpack([0], [, , , function(t, e) {
 }
 , function(t, e, n) {}
 , function(t, e, n) {
+}
+, function(t, e, n) {
     "use strict";
-    function r(t) {
-        return t && t.__esModule ? t : {
-            default: t
-        }
-    }
     Object.defineProperty(e, "__esModule", {
         value: !0
     });
-    var i = n(134)
-      , o = r(i)
-      , a = n(10)
-      , s = r(a)
-      , u = n(135)
-      , c = r(u)
-      , l = n(3)
-      , f = n(34)
-      , d = r(f)
-      , h = n(35)
-      , p = r(h)
-      , v = n(29)
-      , m = r(v)
-      , _ = n(36)
-      , g = r(_);
+    n(31);
     e.default = {
         init: function() {
-            var t = this;
-            return (0,
-            c.default)(o.default.mark(function e() {
-                var n = function() {
-                    var t = (0,
-                    c.default)(o.default.mark(function t() {
-                        var e, n = function() {
-                            var t = (0,
-                            c.default)(o.default.mark(function t() {
-                                return o.default.wrap(function(t) {
-                                    for (; ; )
-                                        switch (t.prev = t.next) {
-                                        case 0:
-                                            return t.prev = 0,
-                                            t.abrupt("return", fetch().then(function(t) {
-                                                return e = !1
-                                            }).catch(function(t) {
-                                                return e = !0
-                                            }));
-                                        case 4:
-                                            return t.prev = 4,
-                                            t.t0 = t.catch(0),
-                                            e = !0,
-                                            t.abrupt("return", e);
-                                        case 9:
-                                        case "end":
-                                            return t.stop()
-                                        }
-                                }, t, this, [[0, 4]])
-                            }));
-                            return function() {
-                                return t.apply(this, arguments)
-                            }
-                        }();
-                        return o.default.wrap(function(t) {
-                            for (; ; )
-                                switch (t.prev = t.next) {
-                                case 0:
-                                    if (void 0 === (e = void 0)) {
-                                        t.next = 5;
-                                        break
-                                    }
-                                    t.t0 = e,
-                                    t.next = 8;
-                                    break;
-                                case 5:
-                                    return t.next = 7,
-                                    n();
-                                case 7:
-                                    t.t0 = t.sent;
-                                case 8:
-                                    return t.abrupt("return", t.t0);
-                                case 9:
-                                case "end":
-                                    return t.stop()
-                                }
-                        }, t, this)
-                    }));
-                    return function() {
-                        return t.apply(this, arguments)
-                    }
-                }();
-                return o.default.wrap(function(e) {
-                    for (; ; )
-                        switch (e.prev = e.next) {
-                        case 0:
-                            return t.adSlot = [].concat((0,
-                            s.default)(document.querySelectorAll(".component-ad"))),
-                            t.renderedSlot = [],
-                            t.adEvent = new Event(l.EVENT_AD_RENDERED),
-                            t.isProd = !!window.location.host.includes(l.PROD_URL),
-                            t.logger = !t.isProd && !0,
-                            t.grandAngleNumber = 0,
-                            t.bannerNumber = 0,
-                            t.bannerParallaxNumber = 0,
-                            t.expandNumber = 0,
-                            t.slotRenderEnded = 0,
-                            t.slotNotRendered = 0,
-                            t.slotOnload = 0,
-                            t.parallaxAdList = [],
-                            t.expandAdList = [],
-                            t.pageType = document.documentElement.dataset.pageType,
-                            t.slotPosition = 0,
-                          
-                            e.next = 23,
-                            n();
-                        case 23:
-                            
-                         
-                            setTimeout(function() {
-                                return document.body.classList.remove("scroll-lock")
-                            }, 500);
-                        case 28:
-                        case "end":
-                            return e.stop()
-                        }
-                }, e, t)
-            }))()
-        },
-        addScriptListeners: function() {},
-        initAds: function(t, e) {}
+            var t = document.querySelector(".interstitiel-container")
+              , e = (t.querySelector(".component-ad"),
+            t.querySelector(".close"))
+              , n = document.documentElement.dataset
+              , r = n.interstitialCloseColor
+              , i = n.interstitialDuration
+              , o = isNaN(parseInt(i)) ? 3e3 : parseInt(i)
+              , a = !1;
+            document.body.classList.add("interstitiel-visible"),
+            r.length && (e.style.color = r),
+            e.addEventListener("click", function() {
+                t.classList.add("is-hidden")
+            }),
+            t.addEventListener("transitionend", function() {
+                if (!a)
+                    return a = !0,
+                    void setTimeout(function() {
+                        t.classList.add("is-hidden")
+                    }, o);
+                t.remove()
+            })
+        }
     }
-}
-, function(t, e, n) {
 }
 , function(t, e, n) {
     "use strict";
@@ -9725,6 +9627,17 @@ mazarineWebpack([0], [, , , function(t, e) {
     n(3);
     e.default = {
         init: function(t) {
+            this.$el = t,
+            this.adComponents = [].concat((0,
+            s.default)(document.querySelectorAll(".component-ad"))),
+            this.smallMedia = window.matchMedia("only screen and (max-width: 768px)"),
+            this.otherMedia = window.matchMedia("only screen and (min-width: 769px)"),
+            this.oldMediaType = "",
+            this.reqCollection = [],
+            this.elementsToAnim = [],
+            this.loadHandler = this.loadHandler.bind(this),
+            this.responsiveHandler = this.responsiveHandler.bind(this),
+            document.addEventListener("DOMContentLoaded", this.loadHandler)
         },
         loadHandler: function(t) {
             this.parallaxColumnFinder(),
