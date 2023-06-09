@@ -10110,7 +10110,7 @@ mazarineWebpack([0], [, , , function(t, e) {
         submitSearch: function() {
             var t = document.querySelector(".component-modal__search--input").value
               , e = document.documentElement.getAttribute("lang");
-            t.length && (window.location = window.location.origin + "/?s=" + t + "&page=0")
+            t.length && (window.location = window.location.origin + "intertidal/?s=" + t + "&page=0")
         },
         renderResponse: function(t) {},
         renderResults: function(t) {}
