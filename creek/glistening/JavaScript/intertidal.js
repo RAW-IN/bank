@@ -8068,31 +8068,12 @@ document.documentElement.className += ' js';
     }
 }
 ]);
-;mazarineWebpack([0], [, , , function(t, e, n) {
+mazarineWebpack([0], [, , , function(t, e) {
     "use strict";
-    Object.defineProperty(e, "__esModule", {
-        value: !0
-    });
-    e.GOOGLE_AD_ID = 21730003857,
-    e.PROD_URL = "numero.com",
-    e.URL_NEWSLETTER = "/ajax/webform-newsletter",
-    e.EVENT_PRESS_ENTER = "pressEnter",
-    e.EVENT_STICKY_HEADER = "stickyHeader",
-    e.EVENT_AD_RENDERED = "adRendered",
-    e.EVENT_REMOVE_LOADER = "removeLoader",
-    e.EVENT_LOAD_MORE_ARTICLE = "loadMoreArticle",
-    e.KEY_ORIGIN = "mazarine_numero_ad"
+    e.EVENT_REMOVE_LOADER = "removeLoader"
 }
-, function(t, e) {
-    var n = t.exports = "undefined" != typeof window && window.Math == Math ? window : "undefined" != typeof self && self.Math == Math ? self : Function("return this")();
-    "number" == typeof __g && (__g = n)
-}
-, function(t, e) {
-    var n = t.exports = {
-        version: "2.6.12"
-    };
-    "number" == typeof __e && (__e = n)
-}
+, function(t, e) {}
+, function(t, e) {}
 , function(t, e, n) {
     var r = n(79)("wks")
       , i = n(45)
@@ -8779,61 +8760,7 @@ document.documentElement.className += ' js';
         }
     })
 }
-, function(t, e, n) {
-    "use strict";
-    (function(t) {
-        Object.defineProperty(e, "__esModule", {
-            value: !0
-        });
-        var r = n(3);
-        e.default = {
-            init: function(t) {
-                var e = this;
-                t.addEventListener("submit", function(t) {
-                    t.preventDefault()
-                });
-                var n = {
-                    submitButton: t.querySelector('button[type="submit"]'),
-                    inputMail: t.querySelector('input[type="email"]'),
-                    reponseContainer: document.querySelector(".component-form--response")
-                }
-                  , r = function(t) {
-                    switch (e.submitButton.dataset.type) {
-                    case "newsLetterSub":
-                        e.submitNewsLetterSub(t, n, e.newsLetterSubSuccess.bind(e), e.newsLetterSubError.bind(e))
-                    }
-                };
-                this.submitButton.addEventListener("click", r)
-            },
-            submitNewsLetterSub: function(e, n, i, o) {
-                e.preventDefault();
-                var a = n.container.querySelector('input[type="radio"]:checked')
-                  , s = n.inputMail.value;
-                if (a && s.length) {
-                    if (/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(s)) {
-                        var u = {
-                            type: "POST",
-                            url: r.URL_NEWSLETTER,
-                            data: "email=" + s + "&language=" + a.value,
-                            ajaxSuccess: i,
-                            ajaxError: o
-                        };
-                        t.ajax(u)
-                    } else
-                        n.inputMail.classList.add("error")
-                }
-            },
-            newsLetterSubSuccess: function(t) {
-                this.inputMail.classList.remove("error"),
-                this.reponseContainer.innerText = "Votre inscription a bien été prise en compte."
-            },
-            newsLetterSubError: function(t) {
-                this.inputMail.classList.add("error")
-            }
-        }
-    }
-    ).call(e, n(7))
-}
+, function(t, e, n) {}
 , function(t, e, n) {
     "use strict";
     function r(t) {
@@ -8930,7 +8857,6 @@ document.documentElement.className += ' js';
                             return t.adSlot = [].concat((0,
                             s.default)(document.querySelectorAll(".component-ad"))),
                             t.renderedSlot = [],
-                            t.adManagerAccountID = l.GOOGLE_AD_ID,
                             t.adEvent = new Event(l.EVENT_AD_RENDERED),
                             t.isProd = !!window.location.host.includes(l.PROD_URL),
                             t.logger = !t.isProd && !0,
@@ -8949,24 +8875,7 @@ document.documentElement.className += ' js';
                             e.next = 23,
                             n();
                         case 23:
-                            window.usingBlocker = e.sent,
-                            t.addScriptListeners = t.addScriptListeners.bind(t),
-                            window.usingBlocker ? (window.hasAdBlocker = !0,
-                            t.adSlot.forEach(function(t) {
-                                var e = t.parentNode;
-                                t.style.display = "none",
-                                e.classList.contains("interstitiel-container") && (e.style.display = "none")
-                            }),
-                            window.dispatchEvent(t.adEvent)) : (window.hasAdBlocker = !1,
-                            window.addEventListener("message", function(e) {
-                                if (e.data.origin === l.KEY_ORIGIN) {
-                                    var n = e.currentTarget.ampInaboxIframes[t.slotPosition].parentNode.parentNode;
-                                    n.classList.add(e.data.type + "-ad"),
-                                    "parallax" === e.data.type ? t.parallaxAdList.push(n) : t.expandAdList.push(n),
-                                    ++t.slotPosition
-                                }
-                            }),
-                            t.addScriptListeners()),
+                            
                          
                             setTimeout(function() {
                                 return document.body.classList.remove("scroll-lock")
@@ -8978,91 +8887,8 @@ document.documentElement.className += ' js';
                 }, e, t)
             }))()
         },
-        addScriptListeners: function() {
-            var t = this;
-            this.script.addEventListener("error", function(t) {
-                t.target
-            }),
-            this.script.addEventListener("load", function() {
-                window.googletag = window.googletag || {
-                    cmd: []
-                },
-                window.googletag.cmd.push(function() {
-                    window.googletag.pubads().collapseEmptyDivs(!0),
-                    window.googletag.pubads().enableSingleRequest(),
-                    window.googletag.enableServices(),
-                    window.googletag.pubads().addEventListener("slotRenderEnded", function(e) {
-                        var n = window[e.slot.getSlotElementId()];
-                        if (e.isEmpty) {
-                            if (t.slotNotRendered++,
-                            n.classList.contains("interstitiel-ad") && (window.interstitielStatus = "unserved"),
-                            n.classList.contains("masthed-ad") && n.parentNode.classList.contains("masthead-container") && n.parentNode.classList.add("is-hidden"),
-                            n.classList.contains("grid-side") && "page-category" === t.pageType) {
-                                var r = n.parentNode
-                                  , i = r.previousElementSibling;
-                                r.remove(),
-                                i.classList.remove("grid-3"),
-                                i.parentNode.classList.remove("has-ad")
-                            }
-                            n.classList.add("unserved")
-                        } else
-                            n.classList.add("served"),
-                            t.slotRenderEnded++
-                    }),
-                    window.googletag.pubads().addEventListener("slotOnload", function(e) {
-                        var n = window[e.slot.getSlotElementId()];
-                        t.slotOnload++,
-                        n.classList.contains("interstitiel-ad") && (d.default.init(),
-                        n.parentNode.classList.remove("is-hidden")),
-                        n.classList.contains("masthed-ad") && p.default.init(),
-                        t.slotOnload === t.slotRenderEnded && (t.expandAdList.length && m.default.init(t.expandAdList),
-                        t.parallaxAdList.length && g.default.init(t.parallaxAdList))
-                    })
-                }),
-                t.adSlot.map(function(e, n) {
-                    t.initAds(e, n)
-                }),
-                window.dispatchEvent(t.adEvent)
-            })
-        },
-        initAds: function(t, e) {
-            var n = "google-ad-" + e
-              , r = t.parentNode
-              , i = this.isProd ? "numero-2020" : "numero-2020-pp"
-              , o = document.documentElement.dataset
-              , a = o.slotSize
-              , s = o.env
-              , u = o.category
-              , c = o.homepage
-              , l = o.iscategory
-              , f = o.isarticle
-              , d = a.split("]").filter(function(t) {
-                return t.length
-            }).map(function(t) {
-                return t.substring(1)
-            }).map(function(t) {
-                return t.split(",").map(function(t) {
-                    return parseInt(t, 10)
-                })
-            })
-              , h = "masthead";
-            t.classList.contains("masthed-ad") || (r.classList.contains("block-col-push__ad--container") || r.classList.contains("column-right-item") ? (this.grandAngleNumber++,
-            h = "half-page-grand-angle-2022-" + this.grandAngleNumber) : t.classList.contains("interstitiel-ad") ? (h = "interstitial-fluid",
-            d.push(["fluid"])) : (this.bannerNumber++,
-            h = "banniere-" + this.bannerNumber)),
-            t.setAttribute("id", n);
-            var p = i + "-" + h
-              , v = "/" + this.adManagerAccountID + "/" + i + "/" + p;
-            window.googletag = window.googletag || {
-                cmd: []
-            },
-            window.googletag.cmd.push(function() {
-                return window.googletag.defineSlot(v, d, n).setTargeting("ENV", s).setTargeting("CATEGORY", u).setTargeting("isCategory", l).setTargeting("isArticle", f).setTargeting("homepage", c).addService(window.googletag.pubads())
-            }),
-            window.googletag.cmd.push(function() {
-                window.googletag.display(n)
-            })
-        }
+        addScriptListeners: function() {},
+        initAds: function(t, e) {}
     }
 }
 , function(t, e, n) {
@@ -9106,7 +8932,6 @@ document.documentElement.className += ' js';
     e.default = {
         init: function() {
             this.mastheadContainer = document.querySelector(".masthead-container"),
-            this.componentAd = document.querySelector(".masthed-ad"),
             this.componentAdHeight = this.componentAd.getBoundingClientRect().height,
             this.header = document.querySelector("header.block-header"),
             this.headerHeight = this.header.getBoundingClientRect().height,
@@ -9918,499 +9743,9 @@ document.documentElement.className += ' js';
     }
     ).call(e, n(7))
 }
-, function(t, e, n) {
-    "use strict";
-    (function(t) {
-        function r(t) {
-            return t && t.__esModule ? t : {
-                default: t
-            }
-        }
-        Object.defineProperty(e, "__esModule", {
-            value: !0
-        });
-        var i = n(141)
-          , o = r(i)
-          , a = n(142)
-          , s = r(a)
-          , u = n(10)
-          , c = r(u)
-          , l = n(3);
-        e.default = {
-            init: function(t) {
-                var e = arguments.length > 1 && void 0 !== arguments[1] && arguments[1]
-                  , n = this
-                  , r = !(arguments.length > 2 && void 0 !== arguments[2]) || arguments[2]
-                  , i = arguments.length > 3 && void 0 !== arguments[3] && arguments[3];
-                for (this.mainWrapper = document.querySelector(".block-system-main-block"),
-                this.parent = t.parentNode,
-                this.el = t,
-                this.nidExclude = i,
-                this.isLoading = !1,
-                this.loadMoreTarget = document.querySelector(".block-article__read-more-loader"),
-                this.loaderVersion = document.body.classList.contains("black-version") ? ".loader-black" : ".loader-white",
-                this.loader = document.querySelector(this.loaderVersion),
-                this.lang = document.documentElement.getAttribute("lang"),
-                this.position = e || 0,
-                this.ads = document.querySelectorAll(".component-ad"),
-                this.numberOfAds = this.ads.length,
-                this.isProd = !!window.location.host.includes(l.PROD_URL),
-                this.adManagerAccountID = l.GOOGLE_AD_ID,
-                this.sentitive = parseInt(document.querySelector("main").dataset.sensitive); !this.parent.dataset.nid; )
-                    if (this.parent = this.parent.parentNode,
-                    !this.parent)
-                        return null;
-                this.wrapper = this.parent.parentNode,
-                this.handleUrl = this.handleUrl.bind(this),
-                this.handleLoadMoreScroll = this.handleLoadMoreScroll.bind(this),
-                this.loadMore = this.loadMore.bind(this),
-                this.ajaxSuccess = this.ajaxSuccess.bind(this),
-                this.ajaxError = this.ajaxError.bind(this),
-                this.buildAd = this.buildAd.bind(this),
-                r && (this.currentArticle = this.parent,
-                this.oldCurrentArticle = "",
-                this.articles = [this.parent],
-                this.currentPathes = [this.parent.dataset.currentPath],
-                this.lastScrollPosition = 0,
-                window.addEventListener(l.EVENT_LOAD_MORE_ARTICLE, function(t) {
-                    var e = t.detail.newArticle;
-                    n.articles.push(e),
-                    n.currentPathes.push(e.dataset.currentPath)
-                }),
-                window.addEventListener("scroll", this.handleUrl)),
-                window.addEventListener("scroll", this.handleLoadMoreScroll)
-            },
-            handleUrl: function(t) {
-                var e = window
-                  , n = e.scrollY
-                  , r = e.innerHeight
-                  , i = this.articles[0].getBoundingClientRect()
-                  , o = this.currentArticle.getBoundingClientRect()
-                  , a = o.top
-                  , s = o.height
-                  , u = n < this.lastScrollPosition ? "up" : "down"
-                  , c = this.currentArticle.lastElementChild
-                  , l = c.getBoundingClientRect().height
-                  , f = c.classList.contains("component-ad") ? s + l + 40 : s;
-                if (this.lastScrollPosition = n,
-                !(i.top > 0 || this.loading)) {
-                    var d = this.articles.indexOf(this.currentArticle);
-                    if ("up" === u && a > 0 && n + r < n + a + r / 2) {
-                        if (0 === d)
-                            return;
-                        this.oldCurrentArticle = this.currentArticle,
-                        this.currentArticle = this.articles[--d]
-                    } else {
-                        if (!("down" === u && n > n + a + f))
-                            return;
-                        this.oldCurrentArticle = this.currentArticle,
-                        this.currentArticle = this.articles[++d]
-                    }
-                    var h = this.currentArticle.querySelector(".block-article__title").innerText
-                      , p = {
-                        pageId: h
-                    };
-                    document.title = h;
-                    var v = this.currentPathes[d];
-                    history.replaceState(p, h, v),
-                    window.dataLayer = window.dataLayer || [],
-                    window.dataLayer.push({
-                        event: "VirtualPageView",
-                        virtualPageURL: "" + v,
-                        virtualPageTitle: "" + document.title
-                    })
-                }
-            },
-            handleLoadMoreScroll: function() {
-                var t = this.loadMoreTarget.getBoundingClientRect()
-                  , e = t.top;
-                e <= window.innerHeight && e > 0 && this.loadMore(this.ajaxSuccess, this.ajaxError)
-            },
-            loadMore: function(e, n) {
-                if (!this.isLoading) {
-                    var r = {};
-                    this.isLoading = !0,
-                    this.loader.style.display = "block";
-                    var i = this.parent.dataset.tid;
-                    this.nidExclude = this.nidExclude ? this.nidExclude : this.parent.dataset.nid;
-                    var o = document.querySelector('script[type="application/json"][data-drupal-selector="drupal-settings-json"]');
-                    r = {
-                        type: "GET",
-                        url: "/" + JSON.parse(o.textContent).path.pathPrefix + "ajax/articles/load_more/append?display=full&limit=1&tid=" + i + "&exclude_ids=" + this.nidExclude + "&pos=" + this.position,
-                        ajaxSuccess: e,
-                        ajaxError: n
-                    },
-                    t.ajax(r)
-                }
-            },
-            ajaxSuccess: function(t) {
-                var e = this;
-                this.loader.style.display = "none",
-                this.loadMoreTarget.remove(),
-                window.removeEventListener("scroll", this.handleLoadMoreScroll),
-                this.position < 3 && this.ads.length && 0 === this.sentitive && !window.hasAdBlocker && this.buildAd();
-                var r = JSON.parse(t)
-                  , i = r.article
-                  , a = document.createElement("div");
-                a.innerHTML = i,
-                this.mainWrapper.appendChild(a);
-                var u = a.querySelector("article")
-                  , f = (u.querySelector(".block-article__aside .container-outbrain"),
-                u.querySelector(".block-article__aside .component-ad"))
-                  , d = u.querySelector(".block-article__read-more")
-                  , h = [].concat((0,
-                c.default)(u.querySelectorAll(".component-swiper")))
-                  , p = new CustomEvent(l.EVENT_LOAD_MORE_ARTICLE,{
-                    detail: {
-                        newArticle: u
-                    }
-                })
-                  , v = [].concat((0,
-                c.default)(u.querySelectorAll(".block-article-grid__video--youtube")))
-                  , m = [].concat((0,
-                c.default)(u.querySelectorAll(".block-article-grid__video--vimeo")))
-                  , _ = [].concat((0,
-                c.default)(u.querySelectorAll(".instagram-media")));
-                if (window.dispatchEvent(p),
-                f && f.remove(),
-                h.length) {
-                    var g = !0
-                      , y = !1
-                      , b = void 0;
-                    try {
-                        for (var w, x = (0,
-                        o.default)(h); !(g = (w = x.next()).done); g = !0) {
-                            var E = w.value;
-                            !function(t) {
-                                -1 === (0,
-                                s.default)(window.NUMERO).indexOf("modules/article_slideshow") ? n.e(0).then(n.bind(null, 28)).then(function(n) {
-                                    n.default.init(t, e.position),
-                                    window.NUMERO["modules/article_slideshow"] = n.default
-                                }) : window.NUMERO["modules/article_slideshow"].init(t, e.position)
-                            }(E)
-                        }
-                    } catch (t) {
-                        y = !0,
-                        b = t
-                    } finally {
-                        try {
-                            !g && x.return && x.return()
-                        } finally {
-                            if (y)
-                                throw b
-                        }
-                    }
-                }
-                v.length && function() {
-                    var t = !!document.querySelector("#youtubeScript")
-                      , e = !0
-                      , r = !1
-                      , i = void 0;
-                    try {
-                        for (var a, c = (0,
-                        o.default)(v); !(e = (a = c.next()).done); e = !0) {
-                            var l = a.value;
-                            !function(e) {
-                                -1 === (0,
-                                s.default)(window.NUMERO).indexOf("modules/youtube_player") ? n.e(0).then(n.bind(null, 37)).then(function(n) {
-                                    n.default.init(e, u, t),
-                                    window.NUMERO["modules/youtube_player"] = n.default
-                                }) : window.NUMERO["modules/youtube_player"].init(e, u, t)
-                            }(l)
-                        }
-                    } catch (t) {
-                        r = !0,
-                        i = t
-                    } finally {
-                        try {
-                            !e && c.return && c.return()
-                        } finally {
-                            if (r)
-                                throw i
-                        }
-                    }
-                }(),
-                m.length && function() {
-                    var t = !!document.querySelector("#vimeoScript")
-                      , e = !0
-                      , r = !1
-                      , i = void 0;
-                    try {
-                        for (var a, c = (0,
-                        o.default)(m); !(e = (a = c.next()).done); e = !0) {
-                            var l = a.value;
-                            !function(e) {
-                                -1 === (0,
-                                s.default)(window.NUMERO).indexOf("modules/vimeo_player") ? n.e(0).then(n.bind(null, 38)).then(function(n) {
-                                    n.default.init(e, u, t),
-                                    window.NUMERO["modules/vimeo_player"] = n.default
-                                }) : window.NUMERO["modules/vimeo_player"].init(e, u, t)
-                            }(l)
-                        }
-                    } catch (t) {
-                        r = !0,
-                        i = t
-                    } finally {
-                        try {
-                            !e && c.return && c.return()
-                        } finally {
-                            if (r)
-                                throw i
-                        }
-                    }
-                }(),
-                d && (this.position >= 2 && d.classList.remove("is-hidden"),
-                window.NUMERO["modules/load_more_article"].init(d, ++this.position, !1, this.nidExclude)),
-                _.length && window.instgrm.Embeds.process(),
-                this.isLoading = !1
-            },
-            ajaxError: function() {
-                this.isLoading = !1
-            },
-            buildAd: function() {
-                var t = document.createElement("div")
-                  , e = this.numberOfAds++
-                  , n = this.isProd ? "numero-2020" : "numero-2020-pp"
-                  , r = "google-ad-" + e
-                  , i = document.documentElement.dataset
-                  , o = i.slotSize
-                  , a = i.env
-                  , s = i.category
-                  , u = i.homepage
-                  , c = i.iscategory
-                  , l = i.isarticle
-                  , f = o.split("]").filter(function(t) {
-                    return t.length
-                }).map(function(t) {
-                    return t.substring(1)
-                }).map(function(t) {
-                    return t.split(",").map(function(t) {
-                        return parseInt(t, 10)
-                    })
-                });
-                t.setAttribute("id", r),
-                t.classList.add("component-ad", "load-more-ad"),
-                this.parent.appendChild(t);
-                var d = "banniere-" + (this.position + 1)
-                  , h = n + "-" + d
-                  , p = "/" + this.adManagerAccountID + "/" + n + "/" + h;
-                window.googletag.cmd.push(function() {
-                    return window.googletag.defineSlot(p, f, r).setTargeting("ENV", a).setTargeting("CATEGORY", s).setTargeting("isCategory", c).setTargeting("isArticle", l).setTargeting("homepage", u).addService(window.googletag.pubads())
-                }),
-                window.googletag.cmd.push(function() {
-                    window.googletag.display(r)
-                })
-            }
-        }
-    }
-    ).call(e, n(7))
-}
-, function(t, e, n) {
-    "use strict";
-    (function(t) {
-        Object.defineProperty(e, "__esModule", {
-            value: !0
-        });
-        var r = n(3);
-        e.default = {
-            init: function(t) {
-                var e = this;
-                this.el = t,
-                this.isLoading = !1,
-                this.isLast = !1,
-                this.wrapper = document.querySelector(".block-author .block-grid__grid"),
-                this.footer = document.querySelector(".block-footer"),
-                this.loaderVersion = document.body.classList.contains("black-version") ? ".loader-black" : ".loader-white",
-                this.loader = document.querySelector(this.loaderVersion),
-                this.lang = document.documentElement.getAttribute("lang"),
-                this.list = {},
-                this.ads = document.querySelectorAll(".component-ad"),
-                this.numberOfAds = this.ads.length,
-                this.isProd = !!window.location.host.includes(r.PROD_URL),
-                this.adManagerAccountID = r.GOOGLE_AD_ID,
-                this.sentitive = parseInt(document.querySelector("main").dataset.sensitive),
-                this.id = document.querySelector(".block-author__subtitle").dataset.id,
-                this.loadMore = this.loadMore.bind(this),
-                this.ajaxSuccess = this.ajaxSuccess.bind(this),
-                this.ajaxError = this.ajaxError.bind(this),
-                this.el.addEventListener("click", function() {
-                    e.loadMore(e.ajaxSuccess, e.ajaxError)
-                })
-            },
-            loadMore: function(e, n) {
-                if (!this.isLoading && !this.isLast) {
-                    this.isLoading = !0,
-                    this.loader.style.display = "block";
-                    var r = document.querySelectorAll(".block-grid__grid--item").length
-                      , i = {
-                        type: "GET",
-                        url: "/ajax/articles/load_more/append?pos=" + r + "&author=" + this.id + "&limit=6",
-                        ajaxSuccess: e,
-                        ajaxError: n
-                    };
-                    t.ajax(i)
-                }
-            },
-            ajaxSuccess: function(t) {
-                var e = this
-                  , n = JSON.parse(t)
-                  , r = n.articles
-                  , i = n.isLast
-                  , o = window
-                  , a = o.scrollY;
-                this.loader.style.display = "none",
-                r.forEach(function(t, n) {
-                    e.buildCard(t, n)
-                }),
-                this.isLast = i,
-                this.isLoading = !1,
-                window.scrollTo(0, a)
-            },
-            ajaxError: function() {
-                this.footer.style.display = "block",
-                this.isLoading = !1
-            },
-            buildCard: function(t, e) {
-                var n = '\n            <a class="component-card small-card" href="' + t.url + '">\n                <span class="component-card__number">' + t.date_day + '</span>\n                    <picture>\n                        <img class="covered component-card__image" alt="" src="' + t.img_src_absolute + '" />\n                    </picture>\n                <div class="component-card__content--container">\n                    <span class="taxonomy">' + t.category + '</span>\n                    <h3  class="component-card__content--description">\n                        <span>' + t.title + '</span>\n                    </h3>\n                    <span class="component-card__content--date"><span>' + t.date_day + "</span> <span>" + t.date_day_month + "</span></span>\n                </div>\n            </a>\n        "
-                  , r = document.createElement("li");
-                r.classList.add("block-grid__grid--item", "is-hidden"),
-                r.innerHTML = n,
-                this.wrapper.insertBefore(r, this.el.parentNode),
-                function(t) {
-                    setTimeout(function() {
-                        r.classList.remove("is-hidden")
-                    }, 100 * t)
-                }(e)
-            }
-        }
-    }
-    ).call(e, n(7))
-}
-, function(t, e, n) {
-    "use strict";
-    (function(t) {
-        Object.defineProperty(e, "__esModule", {
-            value: !0
-        });
-        var r = n(3);
-        e.default = {
-            init: function(t) {
-                var e = this;
-                this.el = t,
-                this.isLast = !1,
-                this.wrapper = document.querySelector(".views-element-container + .component-wrapper"),
-                this.lang = document.documentElement.getAttribute("lang"),
-                this.isLoading = !1,
-                this.ticker = 1,
-                this.list = {},
-                this.ads = document.querySelectorAll(".component-ad"),
-                this.numberOfAds = this.ads.length,
-                this.isProd = !!window.location.host.includes(r.PROD_URL),
-                this.adManagerAccountID = r.GOOGLE_AD_ID,
-                this.loadMore = this.loadMore.bind(this),
-                this.ajaxSuccess = this.ajaxSuccess.bind(this),
-                this.ajaxError = this.ajaxError.bind(this),
-                this.buildAd = this.buildAd.bind(this),
-                window.addEventListener("scroll", function() {
-                    var t = e.el.getBoundingClientRect()
-                      , n = t.top;
-                    n <= window.innerHeight && n > 0 && e.loadMore(e.ajaxSuccess, e.ajaxError)
-                })
-            },
-            loadMore: function(e, n) {
-                if (!this.isLoading && !this.isLast) {
-                    var r = !1;
-                    this.isLoading = !0;
-                    var i = document.querySelectorAll(".block-grid__grid--item").length
-                      , o = this.el.dataset.id
-                      , a = document.querySelector('script[type="application/json"][data-drupal-selector="drupal-settings-json"]')
-                      , s = JSON.parse(a.textContent);
-                    document.body.classList.contains("path-interviews") && (r = !0);
-                    var u = {
-                        type: "GET",
-                        url: "/" + s.path.pathPrefix + "ajax/articles/load_more/append?pos=" + (i + 1) + "&tid=" + o + "&limit=8&lang=" + this.lang + "&interview=" + r + "&category=both",
-                        ajaxSuccess: e,
-                        dataType: "json",
-                        contentType: "application/json",
-                        ajaxError: n
-                    };
-                    t.ajax(u)
-                }
-            },
-            ajaxSuccess: function(t) {
-                var e = this
-                  , n = (window.matchMedia("only screen and (max-width: 414px)"),
-                window.matchMedia("only screen and (min-width: 415px) and (max-width: 768px)"),
-                JSON.parse(t))
-                  , r = n.articles
-                  , i = n.isLast;
-                this.isLast = i,
-                this.isLoading = !1,
-                this.ticker <= 3 && this.ads && !window.hasAdBlocker && this.buildAd(),
-                this.list = document.createElement("ul"),
-                this.list.classList.add("block-grid__grid"),
-                this.wrapper.appendChild(this.list);
-                var o = document.querySelector("#env_twic_pics").value;
-                r.forEach(function(t, n) {
-                    e.buildCard(t, n, o)
-                })
-            },
-            ajaxError: function() {},
-            buildCard: function(t, e, n) {
-                var r = ""
-                  , i = "";
-                i = t.video_src ? '\n                <div class="component-card__video--container">\n                    <video class="component-card__video--video" autoplay loop muted playsinline />\n                        <source src="' + t.video_src + '" type="video/mp4">\n                        <p>Votre navigateur ne prend pas en charge les vidéos HTML5.</p>\n                    </video>\n                </div>\n            ' : '\n                <picture>\n                    <img class="covered component-card__image" alt="" src="' + t.img_src_absolute + '?twic=v1/cover=1x1" />\n                    <img class="twic faded covered component-card__image" alt="" data-src="image:' + n + t.img_src + '" data-src-step="100" />\n                </picture>\n            ',
-                r = '\n            <a class="component-card small-card" href="/' + this.lang + t.url + '">\n                <span class="component-card__number">' + t.date_day + "</span>\n                " + i + '\n                <div class="component-card__content--container">\n                    <span class="taxonomy">' + t.category + '</span>\n                    <span class="component-card__content--title">' + t.title + '</span>\n                    <span class="component-card__content--date"><span>' + t.date_day + "</span> <span>" + t.date_day_month + "</span></span>\n                </div>\n            </a>\n        ";
-                var o = document.createElement("li");
-                o.classList.add("block-grid__grid--item", "is-hidden"),
-                o.innerHTML = r,
-                this.list.appendChild(o),
-                function(t) {
-                    setTimeout(function() {
-                        o.classList.remove("is-hidden")
-                    }, 40 * t)
-                }(e)
-            },
-            buildAd: function() {
-                var t = document.createElement("div")
-                  , e = this.numberOfAds++
-                  , n = this.isProd ? "numero-2020" : "numero-2020-pp"
-                  , r = "google-ad-" + e
-                  , i = document.documentElement.dataset
-                  , o = i.slotSize
-                  , a = i.env
-                  , s = i.category
-                  , u = i.homepage
-                  , c = i.iscategory
-                  , l = i.isarticle
-                  , f = o.split("]").filter(function(t) {
-                    return t.length
-                }).map(function(t) {
-                    return t.substring(1)
-                }).map(function(t) {
-                    return t.split(",").map(function(t) {
-                        return parseInt(t, 10)
-                    })
-                });
-                t.setAttribute("id", r),
-                t.classList.add("component-ad", "load-more-ad"),
-                this.wrapper.appendChild(t);
-                var d = "banniere-" + this.ticker
-                  , h = n + "-" + d
-                  , p = "/" + this.adManagerAccountID + "/" + n + "/" + h;
-                window.googletag.cmd.push(function() {
-                    return window.googletag.defineSlot(p, f, r).setTargeting("ENV", a).setTargeting("CATEGORY", s).setTargeting("isCategory", c).setTargeting("isArticle", l).setTargeting("homepage", u).addService(window.googletag.pubads())
-                }),
-                window.googletag.cmd.push(function() {
-                    window.googletag.display(r)
-                }),
-                this.bannerNumber++,
-                this.ticker++
-            }
-        }
-    }
-    ).call(e, n(7))
-}
+, function(t, e, n) {}
+, function(t, e, n) {}
+, function(t, e, n) {}
 , function(t, e, n) {
     "use strict";
     Object.defineProperty(e, "__esModule", {
@@ -10750,10 +10085,8 @@ document.documentElement.className += ' js';
             this.modal = new i.default,
             this.closeButton = document.querySelector(".component-modal__close"),
             this.lang = document.documentElement.getAttribute("lang"),
-            a = "fr" == this.lang ? "Plus de résultats" : "More results",
-            this.template = '\n            <div  class="component-modal__search--template-container path-search">\n                <form class="component-modal__search--form">\n                    <input class="component-modal__search--input" placeholder="search" type="text"/>\n                    <div class="component-modal__search--counter"></div>\n                </form>\n\n                <img class="component-modal__search--loader" src="/themes/custom/numero/img/loader.gif">\n\n                <div class="component-modal__search--results">\n                    <ul class="component-modal__search--results-list block-grid__grid"></ul>\n                    <div class="component-modal__search--submit" data-url="/' + t.dataset.url + '">\n                        <span aria-hidden="true"></span>\n                         ' + a + "\n                    </div>\n                </div>\n            </div> \n        ";
+            this.template = '\n            <div  class="component-modal__search--template-container path-search">\n                <form class="component-modal__search--form">\n                    <input class="component-modal__search--input" placeholder="Burble" type="text"/>\n                    <div class="component-modal__search--counter"></div>\n                </form>\n\n               <div class="component-modal__search--submit" data-url="/' + t.dataset.url + '">\n                         ' + a + "\n                </div>\n            </div> \n        ";
             var n = function() {
-                e.loaderEl = document.querySelector(".component-modal__search--loader"),
                 e.inputEl = document.querySelector(".component-modal__search--input"),
                 e.resultsEl = document.querySelector(".component-modal__search--results-list"),
                 e.counterEl = document.querySelector(".component-modal__search--counter"),
@@ -10767,107 +10100,23 @@ document.documentElement.className += ' js';
                 e.modal.buildModal(e.template, "Close", n)
             }),
             this.renderResponse = this.renderResponse.bind(this),
-            this.previewSearch = this.previewSearch.bind(this),
-            this.debouncedPreviewSearch = (0,
-            o.debounce)(function(t) {
-                0 !== t.target.value.trim().length && e.previewSearch(t.target.value)
-            }, 200),
             this.subSearch = function(t) {
                 t.preventDefault(),
                 e.submitSearch(),
                 e.modal.handleDestroyModal()
             }
         },
-        previewSearch: function(t) {
-            var e = this;
-            this.resultsEl.innerHTML = "",
-            this.counterEl.innerHTML = "",
-            this.submitEl.classList.remove("visible");
-            var n = window.location.origin + "/" + this.lang + "/search-json?keys=" + t;
-            fetch(n).then(function(t) {
-                return t.json()
-            }).then(function(t) {
-                var n = t.map(function(t) {
-                    return t
-                });
-                n && e.renderResponse(n)
-            }).catch(function(n) {
-                e.loaderEl.classList.remove("visible"),
-                t.length > 2 && e.loaderEl.classList.add("visible")
-            })
-        },
+        previewSearch: function(t) {},
         submitSearch: function() {
             var t = document.querySelector(".component-modal__search--input").value
               , e = document.documentElement.getAttribute("lang");
             t.length && (window.location = window.location.origin + "/?s=" + t + "&page=0")
         },
-        renderResponse: function(t) {
-            this.loaderEl.classList.remove("visible"),
-            this.submitEl.classList.add("visible"),
-            t && this.renderResults(t),
-            this.counterEl.innerHTML = t.length + " results"
-        },
-        renderResults: function(t) {
-            this.resultsEl.innerHTML = t.map(function(t) {
-                return '\n                <li class="block-grid__grid--item">\n                    <a class="component-card small-card small-card--search" href="' + t.link + '">\n                        <span class="component-card__number">' + t.article_date[0] + t.article_date[1] + '</span>\n                        <picture>\n                            <img class="covered component-card__image" alt="" src="' + t.image_push + '" width="" height="">\n                        </picture>\n                        <div class="component-card__content--container">\n                            <span class="taxonomy">' + t.category + '</span>\n                            <h3 class="component-card__content--title">' + t.title + '</h3>\n                            <span class="component-card__content--date"><span>' + t.article_date + "</span></span>\n                        </div>\n                        \n                    </a>\n                </li>   \n                "
-            }).join("")
-        }
+        renderResponse: function(t) {},
+        renderResults: function(t) {}
     }
 }
-, function(t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", {
-        value: !0
-    });
-    n(3);
-    e.default = {
-        init: function(t) {
-            var e = this;
-            this.lang = document.documentElement.lang,
-            this.module = t,
-            this.form = t.querySelector("form"),
-            this.input = t.querySelector('input[type="email"'),
-            this.checkbox = t.querySelector('input[type="checkbox"'),
-            this.checkboxParent = this.checkbox.parentNode,
-            this.responseContainer = this.form.nextElementSibling,
-            this.input.addEventListener("input", function() {
-                e.resetResponseMessage(t, e.input)
-            }),
-            this.checkbox.addEventListener("change", function() {
-                e.checkbox.checked && e.checkboxParent.classList.remove("error")
-            })
-        },
-        mailOk: function(t) {
-            return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(t)
-        },
-        onFormSubmit: function() {
-            var t = event
-              , e = (t.target,
-            this.input.value)
-              , n = this.checkbox.checked;
-            e.length && (this.mailOk(e) && n || (this.mailOk(e) ? this.input.classList.remove("error") : this.input.classList.add("error"),
-            n ? this.checkboxParent.classList.remove("error") : this.checkboxParent.classList.add("error")))
-        },
-        resetResponseMessage: function() {
-            this.input.classList.remove("error"),
-            this.responseContainer.innerText.length && (this.responseContainer.innerText = "")
-        },
-        unsubscribeSuccess: function() {
-            this.input.classList.remove("error"),
-            this.checkbox.classList.remove("error"),
-            this.module.classList.remove("freeze-form");
-            var t = '\n            <div class="confirmation-texts">\n                <p>' + ("fr" === this.lang ? "Merci!" : "Thank you!") + "</p>\n                <p>" + ("fr" === this.lang ? "Votre déinscription a bien été prise en compte." : "You have successfully been unregistered.") + "</p>\n            </div>\n        ";
-            this.responseContainer.insertAdjacentHTML("afterbegin", t),
-            this.form.classList.add("vanish"),
-            this.responseContainer.classList.add("reveal"),
-            this.input.value = ""
-        },
-        unsubscribeError: function() {
-            this.input.classList.add("error"),
-            this.module.classList.remove("freeze-form")
-        }
-    }
-}
+, function(t, e, n) {}
 , function(t, e, n) {
     "use strict";
     (function(t) {
@@ -10886,18 +10135,13 @@ document.documentElement.className += ' js';
           , l = e(c)
           , f = n(40)
           , d = (e(f),
-        new a.default({
-            dataAttribute: "data-modules",
-            nameMethodInit: "init",
-            removeAttribute: !1,
-            debug: !0
-        }));
+        new a.default({}));
         (0,
         i.default)(function() {
-            t.set("debug", !0),
-            t.set("container", document.querySelector("#container")),
-            (new u.default).initListeners();
-            var e = document.body.classList.contains("page-home");
+         
+          
+           
+           
             history.scrollRestoration && (history.scrollRestoration = e ? "manual" : "auto"),
             d.start(function() {
                 window.hasAd = !0,
@@ -10965,15 +10209,7 @@ document.documentElement.className += ' js';
     function i(t) {
         if (c.some(function(t) {
             return t.test()
-        })) {
-            var e = [];
-            c.forEach(function(t) {
-                t.test() && e.push(t.load())
-            }),
-            u.default.all(e).then(function() {
-                return t()
-            })
-        } else
+        })) {} else
             t()
     }
     Object.defineProperty(e, "__esModule", {
@@ -11822,7 +11058,7 @@ document.documentElement.className += ' js';
                 this.listAllModulesName = this.parseDOM(),
                 this.listAllModulesNameToDestroy = this.keepPreservedModules(this.listAllModulesName.slice(0));
                 for (var e = 0, n = this.listAllModulesName.length; e < n; e++)
-                    this.loadModule(this.listAllModulesName[e].name, this.listAllModulesName[e].element, e, n, t)
+                    this.loadModule(this.listAllModulesName[e].name, this.listAllModulesName[e].element)
             }
             ,
             this.destroy = function(t) {
@@ -11842,12 +11078,7 @@ document.documentElement.className += ' js';
             return e
         }
         ,
-        o.prototype.keepPreservedModules = function(t) {
-            for (var e = t.length, n = this.options.modulesToPreserve.length, r = e - 1; r >= 0; r--)
-                for (var i = 0; i < n; i++)
-                    t[r] === this.options.modulesToPreserve[i] && t.splice(r, 1);
-            return t
-        }
+        o.prototype.keepPreservedModules = function(t) {}
         ,
         o.prototype.loadModule = function(t, e, r, o, a) {
             var s = this;
@@ -11861,286 +11092,14 @@ document.documentElement.className += ' js';
             })
         }
         ,
-        o.prototype.destroyModule = function(t, e, r, i) {
-            var o = this;
-            n(143)("./" + t).then(function(t) {
-                "function" == typeof t.default[o.options.nameMethodDestroy] && (t.default[o.options.nameMethodDestroy](),
-                o.options.debug),
-                0 === e && "function" == typeof i && i()
-            })
-        }
-        ,
+      
         e.default = o
     }
     ).call(e, n(7))
 }
-, function(t, e, n) {
-    "use strict";
-    function r(t) {
-        var e, n;
-        this.promise = new t(function(t, r) {
-            if (void 0 !== e || void 0 !== n)
-                throw TypeError("Bad Promise constructor");
-            e = t,
-            n = r
-        }
-        ),
-        this.resolve = i(e),
-        this.reject = i(n)
-    }
-    var i = n(43);
-    t.exports.f = function(t) {
-        return new r(t)
-    }
-}
-, function(t, e, n) {
-    "use strict";
-    var r = n(133)
-      , i = function(t) {
-        return t && t.__esModule ? t : {
-            default: t
-        }
-    }(r)
-      , o = i.default;
-    Object.defineProperty = function(t, e) {
-        return "__esModule" === e ? void (t[e] = !0) : o.apply(this, arguments)
-    }
-}
-, function(t, e, n) {
-    "use strict";
-    function r(t) {
-        return t && t.__esModule ? t : {
-            default: t
-        }
-    }
-    Object.defineProperty(e, "__esModule", {
-        value: !0
-    });
-    var i = n(136)
-      , o = r(i)
-      , a = n(141)
-      , s = r(a)
-      , u = n(17)
-      , c = r(u)
-      , l = n(18)
-      , f = r(l)
-      , d = [JSON, "application/json"]
-      , h = [Image, "image/jpeg", "image/png", "image/gif", "image/svg"]
-      , p = [Audio, "audio/mpeg"]
-      , v = [HTMLVideoElement, "video/mp4"]
-      , m = [ArrayBuffer]
-      , _ = new Object;
-    if (window.webkitAudioContext || window.AudioContext) {
-        new (window.webkitAudioContext || window.AudioContext)
-    }
-    var g = function() {
-        function t(e) {
-            var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : ""
-              , r = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
-            (0,
-            c.default)(this, t),
-            this.stacks = new Array,
-            this.baseURL = n,
-            this.cache = r,
-            "string" == typeof e && (e = [e]);
-            var i = !0
-              , o = !1
-              , a = void 0;
-            try {
-                for (var u, l = (0,
-                s.default)(e); !(i = (u = l.next()).done); i = !0) {
-                    var f = u.value;
-                    this.stack(f)
-                }
-            } catch (t) {
-                o = !0,
-                a = t
-            } finally {
-                try {
-                    !i && l.return && l.return()
-                } finally {
-                    if (o)
-                        throw a
-                }
-            }
-            return this
-        }
-        return (0,
-        f.default)(t, [{
-            key: "stack",
-            value: function(t) {
-                var e = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null
-                  , n = {
-                    name: e,
-                    path: t,
-                    loaded: !1,
-                    content: null,
-                    progress: 0
-                };
-                if (t instanceof Object == 1 && t instanceof Array == 0) {
-                    if (n.path = t.path,
-                    void 0 != t.count) {
-                        for (var r = new Array, i = 0, o = t.count; i <= o; i++) {
-                            var a = t.path.match(/%+/)[0]
-                              , s = i.toString();
-                            r.push(t.path.replace(/%+/, (a.replace(/%/g, "0") + s).slice(-a.length)))
-                        }
-                        n.original = t,
-                        n.path = r
-                    }
-                    void 0 != t.type && (n.type = t.type)
-                }
-                return this.stacks.push(n),
-                this
-            }
-        }, {
-            key: "load",
-            value: function() {
-                var e = this;
-                return new o.default(function(n, r) {
-                    var i = !0
-                      , o = !1
-                      , a = void 0;
-                    try {
-                        for (var u, c = (0,
-                        s.default)(e.stacks); !(i = (u = c.next()).done); i = !0) {
-                            var l = u.value;
-                            !function(r) {
-                                r.path instanceof Array ? function() {
-                                    for (var i = new Array, o = 0, a = 0, s = r.path.length; a < s; a++)
-                                        !function(a, s) {
-                                            t.load(e.baseURL + r.path[a], r.type, e.cache).then(function(t) {
-                                                o++,
-                                                r.progress = o / r.path.length,
-                                                i[a] = t,
-                                                o == r.path.length && (r.loaded = !0,
-                                                r.content = i,
-                                                1 == e.complete && n([e.files, e.stacks]))
-                                            })
-                                        }(a)
-                                }() : t.load(r.path, r.type, e.cache).then(function(t) {
-                                    r.loaded = !0,
-                                    r.content = t,
-                                    1 == e.complete && n([e.files, e.stacks])
-                                })
-                            }(l)
-                        }
-                    } catch (t) {
-                        o = !0,
-                        a = t
-                    } finally {
-                        try {
-                            !i && c.return && c.return()
-                        } finally {
-                            if (o)
-                                throw a
-                        }
-                    }
-                }
-                )
-            }
-        }, {
-            key: "complete",
-            get: function() {
-                var t = !0
-                  , e = !0
-                  , n = !1
-                  , r = void 0;
-                try {
-                    for (var i, o = (0,
-                    s.default)(this.stacks); !(e = (i = o.next()).done); e = !0) {
-                        if (0 == i.value.loaded) {
-                            t = !1;
-                            break
-                        }
-                    }
-                } catch (t) {
-                    n = !0,
-                    r = t
-                } finally {
-                    try {
-                        !e && o.return && o.return()
-                    } finally {
-                        if (n)
-                            throw r
-                    }
-                }
-                return t
-            }
-        }, {
-            key: "progress",
-            get: function() {
-                var t = 0
-                  , e = 1 / this.stacks.length
-                  , n = !0
-                  , r = !1
-                  , i = void 0;
-                try {
-                    for (var o, a = (0,
-                    s.default)(this.stacks); !(n = (o = a.next()).done); n = !0) {
-                        var u = o.value;
-                        u.path instanceof Array ? t += e * u.progress : 1 == u.loaded && (t += e)
-                    }
-                } catch (t) {
-                    r = !0,
-                    i = t
-                } finally {
-                    try {
-                        !n && a.return && a.return()
-                    } finally {
-                        if (r)
-                            throw i
-                    }
-                }
-                return Math.max(0, Math.min(1, t))
-            }
-        }, {
-            key: "files",
-            get: function() {
-                return this.stacks.map(function(t) {
-                    return t.content
-                })
-            }
-        }], [{
-            key: "load",
-            value: function(t) {
-                var e = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null
-                  , n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
-                return new o.default(function(r, i) {
-                    1 == n && void 0 != _[t] ? r(_[t]) : fetch(t).then(function(n) {
-                        var i = n.headers.get("content-type").split(";")[0];
-                        d.includes(i) && null == e || d.includes(e) ? n.json().then(function(t) {
-                            r(t)
-                        }) : h.includes(i) && null == e || h.includes(e) ? n.blob().then(function(e) {
-                            var n = new Image;
-                            n.addEventListener("load", function() {
-                                r(n)
-                            }, !1),
-                            window.navigator.msSaveOrOpenBlob ? n.src = t : n.src = URL.createObjectURL(e)
-                        }) : v.includes(i) && null == e || v.includes(e) ? n.blob().then(function(e) {
-                            var n = document.createElement("video");
-                            window.navigator.msSaveOrOpenBlob ? n.src = t : n.src = URL.createObjectURL(e),
-                            r(n)
-                        }) : p.includes(i) && null == e || p.includes(e) ? n.blob().then(function(e) {
-                            var n = document.createElement("audio");
-                            window.navigator.msSaveOrOpenBlob ? n.src = t : n.src = URL.createObjectURL(e),
-                            r(n)
-                        }) : m.includes(i) && null == e || m.includes(e) ? n.arrayBuffer().then(function(t) {
-                            p.includes(i) ? AUDIO_CONTEXT.decodeAudioData(t, function(t) {
-                                r(t)
-                            }) : r(t)
-                        }) : n.text().then(function(t) {
-                            r(t)
-                        })
-                    }).catch(function(t) {})
-                }
-                )
-            }
-        }]),
-        t
-    }();
-    e.default = g
-}
+, function(t, e, n) {}
+, function(t, e, n) {}
+, function(t, e, n) {}
 , function(t, e, n) {
     "use strict";
     function r(t) {
@@ -23179,97 +22138,6 @@ document.documentElement.className += ' js';
     });
   })();
   
-  // web sharing detection
-    document.addEventListener( 'DOMContentLoaded', ()=> {
-
-        'use strict';
-
-        // get page information
-        const html = document.documentElement
-        , canonical = document.querySelector( 'link[rel=canonical]' )
-        , desc = document.getElementsByName( 'description' )
-        , pageInfo = {
-            url: canonical ? canonical.href : location.href,
-            title: document.title || '',
-            text: desc.length ? desc[ 0 ].content : ''
-        }
-        ;
-
-        // Web Share API support?
-        if ( navigator.share )
-        html.classList.add( 'webshareapi' );
-
-        // social sharing enabled
-        html.classList.add( 'social' );
-
-        // click event
-        document.body.addEventListener( 'click', ( e )=> {
-
-            // on share button?
-            let t = e.target.closest( 'A' );
-            if ( !t || !t.closest( '.share' ) )
-            return;
-
-            // cancel link
-            e.preventDefault();
-
-            // Web Share API
-            if ( t.hash === '#webshare' ) {
-
-                navigator.share( pageInfo );
-                return;
-
-            }
-
-            // social media link
-            let popup, newUrl = urlParse( t.href, pageInfo );
-
-            // open popup
-            if ( t.protocol.startsWith( 'http' ) ) {
-
-                let sw = screen.availWidth || 1024
-                , sh = screen.availHeight || 700
-                , pw = Math.min( 600, ( sw - 40 ) )
-                , ph = Math.min( 600, ( sh - 40 ) )
-                , px = Math.floor( ( sw - pw ) / 2 )
-                , py = Math.floor( ( sh - ph ) / 2 );
-
-                popup = window.open( newUrl, 'social', `width = $ {
-                    pw}
-                    , height = $ {
-                        ph}
-                        , left = $ {
-                            px}
-                            , top = $ {
-                                py}
-                                , \
-                                location = 0, menubar = 0, toolbar = 0, personalbar = 0, status = 0, scrollbars = 1, resizable = 1` );
-                            }
-
-                            if ( popup )
-                            popup.focus();
-                            else
-                            location.href = newUrl;
-
-                        }
-                    );
-
-                    // URL template parser
-
-                    function urlParse( str, token ) {
-
-                        for ( let t in token ) {
-                            str = str.replace( new RegExp( '\\$\\{' + t + '\\}', 'g' ), encodeURIComponent( token[ t ] ) );
-                        }
-                        return str;
-
-                    }
-
-                }
-            );
-
-
-/*! lazysizes - v5.3.2 */
+  /*! lazysizes - v5.3.2 */
 
 !function(e){var t=function(u,D,f){"use strict";var k,H;if(function(){var e;var t={lazyClass:"lazyload",loadedClass:"lazyloaded",loadingClass:"lazyloading",preloadClass:"lazypreload",errorClass:"lazyerror",autosizesClass:"lazyautosizes",fastLoadedClass:"ls-is-cached",iframeLoadMode:0,srcAttr:"data-src",srcsetAttr:"data-srcset",sizesAttr:"data-sizes",minSize:40,customMedia:{},init:true,expFactor:1.5,hFac:.8,loadMode:2,loadHidden:true,ricTimeout:0,throttleDelay:125};H=u.lazySizesConfig||u.lazysizesConfig||{};for(e in t){if(!(e in H)){H[e]=t[e]}}}(),!D||!D.getElementsByClassName){return{init:function(){},cfg:H,noSupport:true}}var O=D.documentElement,i=u.HTMLPictureElement,P="addEventListener",$="getAttribute",q=u[P].bind(u),I=u.setTimeout,U=u.requestAnimationFrame||I,o=u.requestIdleCallback,j=/^picture$/i,r=["load","error","lazyincluded","_lazyloaded"],a={},G=Array.prototype.forEach,J=function(e,t){if(!a[t]){a[t]=new RegExp("(\\s|^)"+t+"(\\s|$)")}return a[t].test(e[$]("class")||"")&&a[t]},K=function(e,t){if(!J(e,t)){e.setAttribute("class",(e[$]("class")||"").trim()+" "+t)}},Q=function(e,t){var a;if(a=J(e,t)){e.setAttribute("class",(e[$]("class")||"").replace(a," "))}},V=function(t,a,e){var i=e?P:"removeEventListener";if(e){V(t,a)}r.forEach(function(e){t[i](e,a)})},X=function(e,t,a,i,r){var n=D.createEvent("Event");if(!a){a={}}a.instance=k;n.initEvent(t,!i,!r);n.detail=a;e.dispatchEvent(n);return n},Y=function(e,t){var a;if(!i&&(a=u.picturefill||H.pf)){if(t&&t.src&&!e[$]("srcset")){e.setAttribute("srcset",t.src)}a({reevaluate:true,elements:[e]})}else if(t&&t.src){e.src=t.src}},Z=function(e,t){return(getComputedStyle(e,null)||{})[t]},s=function(e,t,a){a=a||e.offsetWidth;while(a<H.minSize&&t&&!e._lazysizesWidth){a=t.offsetWidth;t=t.parentNode}return a},ee=function(){var a,i;var t=[];var r=[];var n=t;var s=function(){var e=n;n=t.length?r:t;a=true;i=false;while(e.length){e.shift()()}a=false};var e=function(e,t){if(a&&!t){e.apply(this,arguments)}else{n.push(e);if(!i){i=true;(D.hidden?I:U)(s)}}};e._lsFlush=s;return e}(),te=function(a,e){return e?function(){ee(a)}:function(){var e=this;var t=arguments;ee(function(){a.apply(e,t)})}},ae=function(e){var a;var i=0;var r=H.throttleDelay;var n=H.ricTimeout;var t=function(){a=false;i=f.now();e()};var s=o&&n>49?function(){o(t,{timeout:n});if(n!==H.ricTimeout){n=H.ricTimeout}}:te(function(){I(t)},true);return function(e){var t;if(e=e===true){n=33}if(a){return}a=true;t=r-(f.now()-i);if(t<0){t=0}if(e||t<9){s()}else{I(s,t)}}},ie=function(e){var t,a;var i=99;var r=function(){t=null;e()};var n=function(){var e=f.now()-a;if(e<i){I(n,i-e)}else{(o||r)(r)}};return function(){a=f.now();if(!t){t=I(n,i)}}},e=function(){var v,m,c,h,e;var y,z,g,p,C,b,A;var n=/^img$/i;var d=/^iframe$/i;var E="onscroll"in u&&!/(gle|ing)bot/.test(navigator.userAgent);var _=0;var w=0;var M=0;var N=-1;var L=function(e){M--;if(!e||M<0||!e.target){M=0}};var x=function(e){if(A==null){A=Z(D.body,"visibility")=="hidden"}return A||!(Z(e.parentNode,"visibility")=="hidden"&&Z(e,"visibility")=="hidden")};var W=function(e,t){var a;var i=e;var r=x(e);g-=t;b+=t;p-=t;C+=t;while(r&&(i=i.offsetParent)&&i!=D.body&&i!=O){r=(Z(i,"opacity")||1)>0;if(r&&Z(i,"overflow")!="visible"){a=i.getBoundingClientRect();r=C>a.left&&p<a.right&&b>a.top-1&&g<a.bottom+1}}return r};var t=function(){var e,t,a,i,r,n,s,o,l,u,f,c;var d=k.elements;if((h=H.loadMode)&&M<8&&(e=d.length)){t=0;N++;for(;t<e;t++){if(!d[t]||d[t]._lazyRace){continue}if(!E||k.prematureUnveil&&k.prematureUnveil(d[t])){R(d[t]);continue}if(!(o=d[t][$]("data-expand"))||!(n=o*1)){n=w}if(!u){u=!H.expand||H.expand<1?O.clientHeight>500&&O.clientWidth>500?500:370:H.expand;k._defEx=u;f=u*H.expFactor;c=H.hFac;A=null;if(w<f&&M<1&&N>2&&h>2&&!D.hidden){w=f;N=0}else if(h>1&&N>1&&M<6){w=u}else{w=_}}if(l!==n){y=innerWidth+n*c;z=innerHeight+n;s=n*-1;l=n}a=d[t].getBoundingClientRect();if((b=a.bottom)>=s&&(g=a.top)<=z&&(C=a.right)>=s*c&&(p=a.left)<=y&&(b||C||p||g)&&(H.loadHidden||x(d[t]))&&(m&&M<3&&!o&&(h<3||N<4)||W(d[t],n))){R(d[t]);r=true;if(M>9){break}}else if(!r&&m&&!i&&M<4&&N<4&&h>2&&(v[0]||H.preloadAfterLoad)&&(v[0]||!o&&(b||C||p||g||d[t][$](H.sizesAttr)!="auto"))){i=v[0]||d[t]}}if(i&&!r){R(i)}}};var a=ae(t);var S=function(e){var t=e.target;if(t._lazyCache){delete t._lazyCache;return}L(e);K(t,H.loadedClass);Q(t,H.loadingClass);V(t,B);X(t,"lazyloaded")};var i=te(S);var B=function(e){i({target:e.target})};var T=function(e,t){var a=e.getAttribute("data-load-mode")||H.iframeLoadMode;if(a==0){e.contentWindow.location.replace(t)}else if(a==1){e.src=t}};var F=function(e){var t;var a=e[$](H.srcsetAttr);if(t=H.customMedia[e[$]("data-media")||e[$]("media")]){e.setAttribute("media",t)}if(a){e.setAttribute("srcset",a)}};var s=te(function(t,e,a,i,r){var n,s,o,l,u,f;if(!(u=X(t,"lazybeforeunveil",e)).defaultPrevented){if(i){if(a){K(t,H.autosizesClass)}else{t.setAttribute("sizes",i)}}s=t[$](H.srcsetAttr);n=t[$](H.srcAttr);if(r){o=t.parentNode;l=o&&j.test(o.nodeName||"")}f=e.firesLoad||"src"in t&&(s||n||l);u={target:t};K(t,H.loadingClass);if(f){clearTimeout(c);c=I(L,2500);V(t,B,true)}if(l){G.call(o.getElementsByTagName("source"),F)}if(s){t.setAttribute("srcset",s)}else if(n&&!l){if(d.test(t.nodeName)){T(t,n)}else{t.src=n}}if(r&&(s||l)){Y(t,{src:n})}}if(t._lazyRace){delete t._lazyRace}Q(t,H.lazyClass);ee(function(){var e=t.complete&&t.naturalWidth>1;if(!f||e){if(e){K(t,H.fastLoadedClass)}S(u);t._lazyCache=true;I(function(){if("_lazyCache"in t){delete t._lazyCache}},9)}if(t.loading=="lazy"){M--}},true)});var R=function(e){if(e._lazyRace){return}var t;var a=n.test(e.nodeName);var i=a&&(e[$](H.sizesAttr)||e[$]("sizes"));var r=i=="auto";if((r||!m)&&a&&(e[$]("src")||e.srcset)&&!e.complete&&!J(e,H.errorClass)&&J(e,H.lazyClass)){return}t=X(e,"lazyunveilread").detail;if(r){re.updateElem(e,true,e.offsetWidth)}e._lazyRace=true;M++;s(e,t,r,i,a)};var r=ie(function(){H.loadMode=3;a()});var o=function(){if(H.loadMode==3){H.loadMode=2}r()};var l=function(){if(m){return}if(f.now()-e<999){I(l,999);return}m=true;H.loadMode=3;a();q("scroll",o,true)};return{_:function(){e=f.now();k.elements=D.getElementsByClassName(H.lazyClass);v=D.getElementsByClassName(H.lazyClass+" "+H.preloadClass);q("scroll",a,true);q("resize",a,true);q("pageshow",function(e){if(e.persisted){var t=D.querySelectorAll("."+H.loadingClass);if(t.length&&t.forEach){U(function(){t.forEach(function(e){if(e.complete){R(e)}})})}}});if(u.MutationObserver){new MutationObserver(a).observe(O,{childList:true,subtree:true,attributes:true})}else{O[P]("DOMNodeInserted",a,true);O[P]("DOMAttrModified",a,true);setInterval(a,999)}q("hashchange",a,true);["focus","mouseover","click","load","transitionend","animationend"].forEach(function(e){D[P](e,a,true)});if(/d$|^c/.test(D.readyState)){l()}else{q("load",l);D[P]("DOMContentLoaded",a);I(l,2e4)}if(k.elements.length){t();ee._lsFlush()}else{a()}},checkElems:a,unveil:R,_aLSL:o}}(),re=function(){var a;var n=te(function(e,t,a,i){var r,n,s;e._lazysizesWidth=i;i+="px";e.setAttribute("sizes",i);if(j.test(t.nodeName||"")){r=t.getElementsByTagName("source");for(n=0,s=r.length;n<s;n++){r[n].setAttribute("sizes",i)}}if(!a.detail.dataAttr){Y(e,a.detail)}});var i=function(e,t,a){var i;var r=e.parentNode;if(r){a=s(e,r,a);i=X(e,"lazybeforesizes",{width:a,dataAttr:!!t});if(!i.defaultPrevented){a=i.detail.width;if(a&&a!==e._lazysizesWidth){n(e,r,i,a)}}}};var e=function(){var e;var t=a.length;if(t){e=0;for(;e<t;e++){i(a[e])}}};var t=ie(e);return{_:function(){a=D.getElementsByClassName(H.autosizesClass);q("resize",t)},checkElems:t,updateElem:i}}(),t=function(){if(!t.i&&D.getElementsByClassName){t.i=true;re._();e._()}};return I(function(){H.init&&t()}),k={cfg:H,autoSizer:re,loader:e,init:t,uP:Y,aC:K,rC:Q,hC:J,fire:X,gW:s,rAF:ee}}(e,e.document,Date);e.lazySizes=t,"object"==typeof module&&module.exports&&(module.exports=t)}("undefined"!=typeof window?window:{});
-   
