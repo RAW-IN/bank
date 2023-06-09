@@ -8892,36 +8892,6 @@ mazarineWebpack([0], [, , , function(t, e) {
     }
 }
 , function(t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", {
-        value: !0
-    });
-    n(31);
-    e.default = {
-        init: function() {
-            var t = document.querySelector(".interstitiel-container")
-              , e = (t.querySelector(".component-ad"),
-            t.querySelector(".close"))
-              , n = document.documentElement.dataset
-              , r = n.interstitialCloseColor
-              , i = n.interstitialDuration
-              , o = isNaN(parseInt(i)) ? 3e3 : parseInt(i)
-              , a = !1;
-            document.body.classList.add("interstitiel-visible"),
-            r.length && (e.style.color = r),
-            e.addEventListener("click", function() {
-                t.classList.add("is-hidden")
-            }),
-            t.addEventListener("transitionend", function() {
-                if (!a)
-                    return a = !0,
-                    void setTimeout(function() {
-                        t.classList.add("is-hidden")
-                    }, o);
-                t.remove()
-            })
-        }
-    }
 }
 , function(t, e, n) {
     "use strict";
@@ -9495,20 +9465,6 @@ mazarineWebpack([0], [, , , function(t, e) {
     });
     var r = n(3);
     e.default = {
-        init: function(t) {
-            var e = this;
-            this.element = t.querySelector(".block-grid__container"),
-            this.blockGridGrid = t.querySelector(".block-grid__grid"),
-            this.blockGridContainerPub = t.querySelector(".block-grid__container-pub"),
-            this.adRenderedHandler = this.adRenderedHandler.bind(this),
-            window.addEventListener(r.EVENT_AD_RENDERED, function() {
-                window.hasAdBlocker || e.adRenderedHandler()
-            }, !1)
-        },
-        adRenderedHandler: function(t) {
-            this.element.classList.add("has-ad"),
-            this.blockGridGrid.classList.add("grid-3")
-        }
     }
 }
 , function(t, e, n) {
@@ -9518,40 +9474,6 @@ mazarineWebpack([0], [, , , function(t, e) {
             value: !0
         }),
         e.default = {
-            init: function(e) {
-                this.$el = e,
-                this.transitionEndEvent = t.whichTransitionEvent(),
-                this.cookieLifetime = t.convertMinutesInDays(document.body.getAttribute("data-cookiebar-lifetime") || "1440"),
-                this.closeButton = null,
-                this.cookieBarComponent = null,
-                this.texts = document.getElementById("cookie-texts"),
-                this.descText = this.texts.querySelector(".cookie-text-desc").innerText,
-                this.ctaText = this.texts.querySelector(".cookie-text-cta").innerText,
-                this.closeHandler = this.closeHandler.bind(this),
-                this.transitionEndHandler = this.transitionEndHandler.bind(this),
-                document.body.removeAttribute("data-cookiebar-lifetime"),
-                this.createCookieBar(),
-                this.closeButton.addEventListener("click", this.closeHandler),
-                this.texts.remove()
-            },
-            createCookieBar: function() {
-                var t = '\n\t\t\t<div class="component-cookie-bar">\n\t\t\t\t<div class="component-cookie-bar__wrapper">\n\t\t\t\t\t<div class="component-cookie-bar__text">\n\t\t\t\t\t\t<p>' + this.descText + '</p>\n\t\t\t\t\t</div>\n\t\t\t\t\t<button class="component-cookie-bar__close">' + this.ctaText + "</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t";
-                document.body.insertAdjacentHTML("afterbegin", t),
-                this.cookieBarComponent = this.$el.querySelector(".component-cookie-bar"),
-                this.closeButton = this.cookieBarComponent.querySelector(".component-cookie-bar__close")
-            },
-            closeHandler: function() {
-                this.closeButton.removeEventListener("click", this.closeHandler),
-                this.cookieBarComponent.addEventListener(this.transitionEndEvent, this.transitionEndHandler),
-                this.cookieBarComponent.classList.add("fade-out")
-            },
-            transitionEndHandler: function(e) {
-                var n = e.target
-                  , r = e.propertyName;
-                n.classList.contains("component-cookie-bar") && "opacity" === r && (this.cookieBarComponent.removeEventListener(this.transitionEndEvent, this.transitionEndHandler),
-                this.cookieBarComponent.remove(),
-                t.setCookie("cookie_bar", "user validation OK", this.cookieLifetime))
-            }
         }
     }
     ).call(e, n(7))
@@ -9573,45 +9495,8 @@ mazarineWebpack([0], [, , , function(t, e) {
     ).call(e, n(7))
 }
 , function(t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", {
-        value: !0
-    }),
-    e.default = function(t) {
-        var e = document.documentElement.lang
-          , n = t.french
-          , r = t.english
-          , i = t.submit
-          , o = t.title
-          , a = t.acknowledgment;
-        return ('\n\t<div class="component-newsletter-form" data-dynamic-modules="newsletter_subscription">\n\t\t\n\t\t<img class="component-newsletter-form__image" src="https://numero.com/sites/default/files/images/next_issue_cover/newsletter_popin_home_desktop.gif" />\n\t\t<div class="component-newsletter-form__body">\n\t\t\t<p class="component-newsletter-form__title">' + o + '</p>\n\t\t\t<form id="newsletter-form" class="component-newsletter-form__form" novalidate>\n\t        <div class="component-newsletter-form__radio--wrapper">\n\t            <fieldset class="component-newsletter-form__radio--container">\n\t                <input type="radio" id="english" name="language" value="en" ' + ("en" === e ? "checked" : null) + '>\n\t                <label for="english">' + r + '</label>\n\t                <span aria-hidden="true"></span>\n\t            </fieldset>\n\t            <fieldset class="component-newsletter-form__radio--container">\n\t                <input type="radio" id="french" name="language" value="fr" ' + ("fr" === e ? "checked" : null) + '>\n\t                <label for="french">' + n + '</label>\n\t                <span aria-hidden="true"></span>\n\t            </fieldset>\n\t        </div>\n\n\t        <div class="component-newsletter-form__input--wrapper">\n\t\t        <fieldset>\n\t\t            <input autocomplete="off" type="email" id="email" name="email" placeholder="exemple@mail.com" class="component-newsletter-form__email thin-font">\n\t\t            <button data-type="newsLetterSub" class="component-newsletter-form__submit" type="submit" id="submit-footer-form" form="newsletter-form" class="submit">\n\t\t                <span aria-hidden="true"></span>\n\t\t                <span class="a11y">' + i + '</span>\n\t\t            </button>\n\t\t        </fieldset>\n\t        </div>\n\n\t        <div class="component-newsletter-form__checkbox--wrapper">\n\t        \t<div class="component-newsletter-form__checkbox--positioner">\n\t\t\t\t\t<input type="checkbox" id="acknowledgement" name="acknowledgement">\n\t        \t\t<span class="checkbox-span"></span>\n\t        \t</div>\n\t\t\t\t<label for="acknowledgement">' + a + '</label>\n\t        </div>\n\t    </form>\n\t\t</div>\n\t</div>\n\t<div class="component-newsletter-form__response thin-font"></div>\n\t').trim()
-    }
 }
 , function(t, e, n) {
-    "use strict";
-    Object.defineProperty(e, "__esModule", {
-        value: !0
-    });
-    var r = n(32)
-      , i = function(t) {
-        return t && t.__esModule ? t : {
-            default: t
-        }
-    }(r);
-    e.default = {
-        init: function(t) {
-            var e = t.querySelector("form")
-              , n = t.querySelector('input[type="email"');
-            i.default.init(e),
-            n.addEventListener("input", this.resetResponseMessage.bind(this, t, n))
-        },
-        resetResponseMessage: function(t, e) {
-            var n = t.querySelector(".component-form__response")
-              , r = n.innerText;
-            e.classList.remove("error"),
-            r.length && (n.innerText = "")
-        }
-    }
 }
 , function(t, e, n) {
     "use strict";
@@ -9813,83 +9698,6 @@ mazarineWebpack([0], [, , , function(t, e) {
     ).call(e, n(7))
 }
 , function(t, e, n) {
-    "use strict";
-    (function(t) {
-        Object.defineProperty(e, "__esModule", {
-            value: !0
-        });
-        var r = n(3);
-        e.default = {
-            init: function(t) {
-                var e = this;
-                this.lang = document.documentElement.lang,
-                this.module = t,
-                this.form = t.querySelector("form"),
-                this.input = t.querySelector('input[type="email"'),
-                this.checkbox = t.querySelector('input[type="checkbox"'),
-                this.checkboxParent = this.checkbox.parentNode,
-                this.responseContainer = t.nextElementSibling,
-                this.form.addEventListener("submit", function(t) {
-                    t.preventDefault(),
-                    e.onFormSubmit()
-                }),
-                this.input.addEventListener("input", function() {
-                    e.resetResponseMessage(t, e.input)
-                }),
-                this.checkbox.addEventListener("change", function() {
-                    e.checkbox.checked && e.checkboxParent.classList.remove("error")
-                })
-            },
-            mailOk: function(t) {
-                return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(t)
-            },
-            onFormSubmit: function() {
-                var e = this
-                  , n = event
-                  , i = n.target
-                  , o = i.querySelector('input[type="radio"]:checked')
-                  , a = this.input.value
-                  , s = this.checkbox.checked;
-                if (o && a.length)
-                    if (this.mailOk(a) && s) {
-                        this.module.classList.add("freeze-form");
-                        var u = {
-                            type: "POST",
-                            url: r.URL_NEWSLETTER,
-                            data: "email=" + a + "&language=" + o.value + "&checked=" + s,
-                            ajaxSuccess: function() {
-                                return e.newsLetterSubSuccess()
-                            },
-                            ajaxError: function() {
-                                return e.newsLetterSubError()
-                            }
-                        };
-                        t.ajax(u)
-                    } else
-                        this.mailOk(a) ? this.input.classList.remove("error") : this.input.classList.add("error"),
-                        s ? this.checkboxParent.classList.remove("error") : this.checkboxParent.classList.add("error")
-            },
-            resetResponseMessage: function() {
-                this.input.classList.remove("error"),
-                this.responseContainer.innerText.length && (this.responseContainer.innerText = "")
-            },
-            newsLetterSubSuccess: function() {
-                this.input.classList.remove("error"),
-                this.checkbox.classList.remove("error"),
-                this.module.classList.remove("freeze-form");
-                var t = '\n            <div class="confirmation-texts">\n                <p>' + ("fr" === this.lang ? "Merci!" : "Thank you!") + "</p>\n                <p>" + ("fr" === this.lang ? "Votre inscription a bien été prise en compte." : "You have successfully been registered.") + "</p>\n            </div>\n        ";
-                this.responseContainer.insertAdjacentHTML("afterbegin", t),
-                this.module.classList.add("vanish"),
-                this.responseContainer.classList.add("reveal"),
-                this.input.value = ""
-            },
-            newsLetterSubError: function() {
-                this.input.classList.add("error"),
-                this.module.classList.remove("freeze-form")
-            }
-        }
-    }
-    ).call(e, n(7))
 }
 , function(t, e, n) {
     "use strict";
@@ -9917,17 +9725,6 @@ mazarineWebpack([0], [, , , function(t, e) {
     n(3);
     e.default = {
         init: function(t) {
-            this.$el = t,
-            this.adComponents = [].concat((0,
-            s.default)(document.querySelectorAll(".component-ad"))),
-            this.smallMedia = window.matchMedia("only screen and (max-width: 768px)"),
-            this.otherMedia = window.matchMedia("only screen and (min-width: 769px)"),
-            this.oldMediaType = "",
-            this.reqCollection = [],
-            this.elementsToAnim = [],
-            this.loadHandler = this.loadHandler.bind(this),
-            this.responsiveHandler = this.responsiveHandler.bind(this),
-            document.addEventListener("DOMContentLoaded", this.loadHandler)
         },
         loadHandler: function(t) {
             this.parallaxColumnFinder(),
@@ -14481,8 +14278,6 @@ mazarineWebpack([0], [, , , function(t, e) {
         "./modules/footer.js": [56, 0],
         "./modules/form": [58, 0],
         "./modules/form.js": [58, 0],
-        "./modules/google_ads": [33],
-        "./modules/google_ads.js": [33],
         "./modules/header": [59, 0],
         "./modules/header.js": [59, 0],
         "./modules/interstitiel_ad": [34],
@@ -16508,8 +16303,6 @@ mazarineWebpack([0], [, , , function(t, e) {
         "./footer.js": [56, 0],
         "./form": [58, 0],
         "./form.js": [58, 0],
-        "./google_ads": [33],
-        "./google_ads.js": [33],
         "./header": [59, 0],
         "./header.js": [59, 0],
         "./interstitiel_ad": [34],
