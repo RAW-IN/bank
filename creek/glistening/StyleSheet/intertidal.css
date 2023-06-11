@@ -7451,6 +7451,13 @@ span.component-card__content--title .masthead {
         display: none;
     }
 }
+span.block-article__aside-item-title.subtitle {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    max-width: 196.8px;
+}
 
 :root {
     --color-mode: "light";
