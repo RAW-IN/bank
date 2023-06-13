@@ -2894,7 +2894,7 @@ a, button {
 }
 
 .block-article-grid__image--wrapper.intent {
-    padding-left: 0;
+    padding: 0;
 }
 
 .block-article-grid__image--wrapper.fifty-fifty {
