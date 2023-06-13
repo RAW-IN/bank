@@ -2893,6 +2893,10 @@ a, button {
     margin-bottom: 30px
 }
 
+.block-article-grid__image--wrapper.intent {
+    padding-left: 0;
+}
+
 .block-article-grid__image--wrapper.fifty-fifty {
     width: auto
 }
