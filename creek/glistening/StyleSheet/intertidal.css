@@ -7459,7 +7459,7 @@ span.block-article__aside-item-title.subtitle {
     content-visibility: auto;
   contain-intrinsic-size: 580px;
 }
-aside.block-article__aside {
+aside.block-article__aside, .next-story {
     content-visibility: auto;
   contain-intrinsic-size: 1000px;
 }
@@ -7470,6 +7470,43 @@ section.block-col-push {
 .page-category .block-grid__grid--item {
     content-visibility: auto;
     contain-intrinsic-size: 480px;
+}
+
+section.next-story {
+    padding-top: 1.58em;
+    border-top: dotted;
+    margin-top: 2em;
+}
+
+
+.next-story-headline {
+    font: 600 clamp(1.9375rem, 1.4353rem + 1.8775vw, 3.125rem)/1.38 var(--text-font-family);
+    color: var(--text-color-h1);
+}
+
+.next-story-headline .highlighted-text {
+    position: relative;
+    display: inline-block;
+    font-style: normal;
+    z-index: 1;
+}
+
+.next-story-headline .highlighted-text .highlight-illustration {
+    position: absolute;
+    top: .38em;
+    left: -0.08em;
+    z-index: -1;
+    width: 103%;
+    height: 1em;
+}
+
+.next-story-headline .highlight-illustration .highlight-path {
+    -webkit-clip-path: url(#highlight-clip-path);
+    clip-path: url(#highlight-clip-path);
+    stroke: var(--highlighto);
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 70px;
 }
 
 :root {
@@ -7486,6 +7523,7 @@ section.block-col-push {
     --bg-bubble: var(--bg-surface);
     --bg-tertiary: #E1E0E0;
     --color-primary-omplementary: #F0E846;
+    --highlighto: #98cbff;
     --line-light: #BFBDBB;
     --bw: #000;
     --wb: #fff;
@@ -7532,6 +7570,7 @@ section.block-col-push {
         --text-font-weight: 250;
         --text-font-weight-h2: 500;
         --color-primary-omplementary: #ffd423;
+        --highlighto: #004a77;
         --img-dar: grayscale(10%) saturate(90%) brightness(80%) contrast(90%);
         --bw: #000;
         --line-light: #6E6E6E;
@@ -7574,6 +7613,7 @@ section.block-col-push {
     --text-font-weight: 250;
     --text-font-weight-h2: 500;
     --color-primary-omplementary: #ffd423;
+    --highlighto: #004a77;
     --img-dar: grayscale(10%) saturate(90%) brightness(80%) contrast(90%);
     --bw: #000;
     /*--card-number-post: var(--text-color-h1);*/
