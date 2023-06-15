@@ -7487,7 +7487,7 @@ section.next-story {
 .next-story-headline .highlighted-text {
     position: relative;
     display: inline-block;
-    font-style: normal;
+    font-family: var(--text-font-family);
     z-index: 1;
 }
 
