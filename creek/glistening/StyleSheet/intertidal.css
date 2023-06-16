@@ -7459,7 +7459,7 @@ span.block-article__aside-item-title.subtitle {
     content-visibility: auto;
   contain-intrinsic-size: 580px;
 }
-aside.block-article__aside, .next-story {
+aside.block-article__aside, .next-story, .next-chapter {
     content-visibility: auto;
   contain-intrinsic-size: 1000px;
 }
@@ -7467,10 +7467,7 @@ section.block-col-push {
     content-visibility: auto;
     contain-intrinsic-size: 1700px;
 }
-.page-category .block-grid__grid--item {
-    content-visibility: auto;
-    contain-intrinsic-size: 480px;
-}
+
 
 section.next-story {
     padding-top: 1.58em;
