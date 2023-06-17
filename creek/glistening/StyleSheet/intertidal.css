@@ -7475,6 +7475,10 @@ section.next-story {
     margin-top: 2em;
 }
 
+.block-article__body .next-chapter h2 {
+    margin-top: .42em;
+}
+
 
 .next-story-headline {
     font: 600 clamp(1.9375rem, 1.4353rem + 1.8775vw, 3.125rem)/1.38 var(--text-font-family);
