@@ -7497,29 +7497,26 @@ section.next-story {
 }
 
 
-article[lang='en'] * {
+.block-article__main-content[lang='en'] * {
     font-family: fell;
     line-height: 1.4;
     font-feature-settings: 'liga', 'calt', 'onum';
-}
-
-.block-article__title[lang='en'] {
-    font-weight: 400;
 }
 
 .block-article__subtitle a[lang='en'], .block-article__body a[lang='en'] {
     text-underline-offset: unset;
 }
 
-article[lang='en'] .next-story-headline {
+.block-article__main-content[lang='en'] .next-story-headline,
+.block-article__title[lang='en'] {
     font-weight: 400;
 }
 
-article[lang='en'] .highlighted-text {
+.block-article__main-content[lang='en'] .highlighted-text {
     font-family: fell;
 }
 
-article[lang='en'] .component-card__number {
+.block-article__main-content[lang='en'] .component-card__number {
     font-family: var(--header-font-family);
 }
 
