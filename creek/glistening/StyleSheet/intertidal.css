@@ -6993,19 +6993,6 @@ ul.block-article__read-more-list .subtitle {
     color: var(--text-color-h2);
 }
 
-article[lang='en'] * {
-    font-family: fell;
-    line-height: 1.4;
-    font-feature-settings: 'liga', 'calt', 'onum';
-}
-
-.block-article__title[lang='en'] {
-    font-weight: 400;
-}
-
-.block-article__subtitle a[lang='en'], .block-article__body a[lang='en'] {
-    text-underline-offset: unset;
-}
 
 .block-article-grid__image--wrapper.right-sm {
     padding: 0;
@@ -7507,6 +7494,33 @@ section.next-story {
     stroke-linecap: round;
     stroke-miterlimit: 10;
     stroke-width: 70px;
+}
+
+
+article[lang='en'] * {
+    font-family: fell;
+    line-height: 1.4;
+    font-feature-settings: 'liga', 'calt', 'onum';
+}
+
+.block-article__title[lang='en'] {
+    font-weight: 400;
+}
+
+.block-article__subtitle a[lang='en'], .block-article__body a[lang='en'] {
+    text-underline-offset: unset;
+}
+
+article[lang='en'] .next-story-headline {
+    font-weight: 400;
+}
+
+article[lang='en'] .highlighted-text {
+    font-family: fell;
+}
+
+article[lang='en'] .component-card__number {
+    font-family: var(--header-font-family);
 }
 
 :root {
