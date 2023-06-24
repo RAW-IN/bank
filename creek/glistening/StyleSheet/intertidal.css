@@ -7497,6 +7497,7 @@ section.next-story {
 }
 
 
+
 .block-article__main-content[lang='en'] * {
     font-family: fell;
     line-height: 1.4;
@@ -7506,7 +7507,7 @@ section.next-story {
 .block-article__subtitle a[lang='en'], .block-article__body a[lang='en'] {
     text-underline-offset: unset;
 }
-
+.block-article__main-content[lang='en'] .block-article__title,
 .block-article__main-content[lang='en'] .next-story-headline,
 .block-article__title[lang='en'] {
     font-weight: 400;
@@ -7518,6 +7519,10 @@ section.next-story {
 
 .block-article__main-content[lang='en'] .component-card__number {
     font-family: var(--header-font-family);
+}
+
+.block-article__main-content[lang='en'] .block-article__date {
+    text-transform: none;
 }
 
 :root {
