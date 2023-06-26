@@ -7509,6 +7509,7 @@ section.next-story {
 }
 .block-article__main-content[lang='en'] .block-article__title,
 .block-article__main-content[lang='en'] .next-story-headline,
+.block-article__main-content[lang='en'] .block-article__body h2,
 .block-article__title[lang='en'] {
     font-weight: 400;
 }
