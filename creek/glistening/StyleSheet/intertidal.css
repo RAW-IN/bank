@@ -1500,6 +1500,10 @@ a, button {
 }
 
 @media only screen and (max-width: 428px) {
+    .xs-hidden {
+        display: none
+    }
+
     .page-404>div:first-child {
         flex-direction: column-reverse
     }
