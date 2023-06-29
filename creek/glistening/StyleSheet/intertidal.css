@@ -7590,7 +7590,8 @@ section.next-story {
         --text-font-weight: 250;
         --text-font-weight-h2: 500;
         --color-primary-omplementary: #ffd423;
-        --highlighto: #004a77;
+        --highlighto: var(--highlightod);
+        --highlightod: #004a77;
         --img-dar: grayscale(10%) saturate(90%) brightness(80%) contrast(90%);
         --bw: #000;
         --line-light: #6E6E6E;
@@ -7636,7 +7637,8 @@ section.next-story {
     --text-font-weight: 250;
     --text-font-weight-h2: 500;
     --color-primary-omplementary: #ffd423;
-    --highlighto: #004a77;
+    --highlighto: var(--highlightod);
+    --highlightod: #004a77;
     --img-dar: grayscale(10%) saturate(90%) brightness(80%) contrast(90%);
     --bw: #000;
     /*--card-number-post: var(--text-color-h1);*/
