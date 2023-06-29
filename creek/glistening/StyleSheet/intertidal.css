@@ -7540,7 +7540,8 @@ section.next-story {
     --bg-bubble: var(--bg-surface);
     --bg-tertiary: #E1E0E0;
     --color-primary-omplementary: #F0E846;
-    --highlighto: #98cbff;
+    --highlighto: var(--highlightol);
+    --highlightol: #98cbff;
     --line-light: #BFBDBB;
     --bw: #000;
     --wb: #fff;
