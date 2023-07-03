@@ -7395,6 +7395,14 @@ mark {
     font-family: "Retina Narrow";
 }
 
+.block-article-grid__chart--wrapper.economist-chart .component-card {
+    background-color: var(--bg);
+}
+
+.block-article-grid__chart--wrapper.economist-chart .component-card .covered {
+    object-position: top;
+}
+
 @media (min-width: 640px) {
     .block-article-grid__chart--wrapper.wsj-chart {
         float: left;
