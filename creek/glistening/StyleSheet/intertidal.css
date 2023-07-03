@@ -7401,6 +7401,7 @@ mark {
 
 .block-article-grid__chart--wrapper.economist-chart .component-card .covered {
     object-position: top;
+    filter:var(--img-dar-wb)
 }
 
 @media (min-width: 640px) {
@@ -7616,6 +7617,7 @@ section.next-story {
         --highlighto: var(--highlightod);
         --highlightod: #004a77;
         --img-dar: grayscale(10%) saturate(90%) brightness(80%) contrast(90%);
+        --img-dar-wb: invert(90%) grayscale(10%) saturate(90%) brightness(60%) contrast(90%);
         --bw: #000;
         --line-light: #6E6E6E;
         --gradient-easing: unset;
@@ -7665,6 +7667,7 @@ section.next-story {
     --highlighto: var(--highlightod);
     --highlightod: #004a77;
     --img-dar: grayscale(10%) saturate(90%) brightness(80%) contrast(90%);
+    --img-dar-wb: invert(90%) grayscale(10%) saturate(90%) brightness(60%) contrast(90%);
     --bw: #000;
     /*--card-number-post: var(--text-color-h1);*/
     /*--card-number-post: #0f0f0f;*/
