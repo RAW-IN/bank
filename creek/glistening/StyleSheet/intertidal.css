@@ -7635,7 +7635,7 @@ section.next-story {
         --featured-caing: 191 137 50;
         --featured-wsj: 10 130 0;
         --featured-economist : 71 94 209;
-        --bg-rgb-wb: var(--bg-rgb);
+        --bg-rgb-wb: 27 27 27;
         --bg-rgb-ft: 26 24 23;
         --featured-ft: 255 136 51;
         --featured-duan: 237 210 5;
@@ -7686,7 +7686,7 @@ section.next-story {
     --featured-caing: 191 137 50;
     --featured-wsj: 10 130 0;
     --featured-economist : 71 94 209;
-    --bg-rgb-wb: var(--bg-rgb);
+    --bg-rgb-wb: 27 27 27;
     --bg-rgb-ft: 26 24 23;
     --featured-ft: 255 136 51;
     --featured-duan: 237 210 5;
