@@ -7401,7 +7401,7 @@ mark {
 
 .block-article-grid__chart--wrapper.economist-chart .component-card .covered {
     object-position: top;
-    filter:var(--img-dar-wb)
+    filter:var(--img-dar-economist)
 }
 
 @media (min-width: 640px) {
@@ -7547,6 +7547,11 @@ section.next-story {
     text-transform: none;
 }
 
+.visualization {
+    height: 720px;
+    filter: var(--img-dar-ft);
+}
+
 :root {
     --color-mode: "light";
     --bg-hsl: 30, 27.27%, 95.69%;
@@ -7644,10 +7649,12 @@ section.next-story {
         --hide-l: block;
         --featured-caing: 191 137 50;
         --featured-wsj: 10 130 0;
-        --featured-economist : 127 90 73;
+        --featured-economist : 173 112 82;
+        --img-dar-economist: invert(86.6%) brightness(80%);
         --bg-rgb-wb: 27 27 27;
         --bg-rgb-ft: 26 24 23;
-        --featured-ft: 255 136 51;
+        --featured-ft: 156 211 33;
+        --img-dar-ft: invert(80%) brightness(80%);
         --featured-duan: 237 210 5;
     }
 }
@@ -7696,9 +7703,11 @@ section.next-story {
     --hide-l: block;
     --featured-caing: 191 137 50;
     --featured-wsj: 10 130 0;
-    --featured-economist : 127 90 73;
+    --featured-economist : 173 112 82;
+    --img-dar-economist: invert(86.6%) brightness(80%);
     --bg-rgb-wb: 27 27 27;
     --bg-rgb-ft: 26 24 23;
-    --featured-ft: 255 136 51;
+    --featured-ft: 156 211 33;
+    --img-dar-ft: invert(80%) brightness(80%);
     --featured-duan: 237 210 5;
 }
