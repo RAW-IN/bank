@@ -7649,8 +7649,8 @@ section.next-story {
         --hide-l: block;
         --featured-caing: 191 137 50;
         --featured-wsj: 10 130 0;
-        --featured-economist : 173 112 82;
-        --img-dar-economist: invert(86.6%) brightness(80%);
+        --featured-economist : 71 94 209;
+        --img-dar-economist: invert(86.55%) brightness(80%);
         --bg-rgb-wb: 27 27 27;
         --bg-rgb-ft: 26 24 23;
         --featured-ft: 156 211 33;
@@ -7703,8 +7703,8 @@ section.next-story {
     --hide-l: block;
     --featured-caing: 191 137 50;
     --featured-wsj: 10 130 0;
-    --featured-economist : 173 112 82;
-    --img-dar-economist: invert(86.6%) brightness(80%);
+    --featured-economist : 71 94 209;
+    --img-dar-economist: invert(86.55%) brightness(80%);
     --bg-rgb-wb: 27 27 27;
     --bg-rgb-ft: 26 24 23;
     --featured-ft: 156 211 33;
