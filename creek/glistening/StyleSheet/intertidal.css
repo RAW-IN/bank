@@ -7552,6 +7552,14 @@ section.next-story {
     filter: var(--img-dar-ft);
 }
 
+.ftilter {
+    filter: var(--img-dar-ft);
+}
+
+.block-article-grid__chart--wrapper.ft-chart .component-card {
+    background-color: var(--bg);
+}
+
 :root {
     --color-mode: "light";
     --bg-hsl: 30, 27.27%, 95.69%;
