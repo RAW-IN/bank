@@ -7560,6 +7560,10 @@ section.next-story {
     background-color: var(--bg);
 }
 
+.mixxbm {
+    mix-blend-mode: var(--mixxbm);
+}
+
 :root {
     --color-mode: "light";
     --bg-hsl: 30, 27.27%, 95.69%;
@@ -7608,6 +7612,7 @@ section.next-story {
     --bg-rgb-ft: 255 241 229;
     --featured-ft: 153 15 61;
     --featured-duan: 3 191 215;
+    --mixxbm: var(--mixxbml);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -7664,6 +7669,7 @@ section.next-story {
         --featured-ft: 156 211 33;
         --img-dar-ft: invert(80%) brightness(80%);
         --featured-duan: 237 210 5;
+        --mixxbm: var(--mixxbmd);
     }
 }
 
@@ -7718,4 +7724,5 @@ section.next-story {
     --featured-ft: 156 211 33;
     --img-dar-ft: invert(80%) brightness(80%);
     --featured-duan: 237 210 5;
+    --mixxbm: var(--mixxbmd);
 }
