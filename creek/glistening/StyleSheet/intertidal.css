@@ -7564,6 +7564,29 @@ section.next-story {
     mix-blend-mode: var(--mixxbm);
 }
 
+
+.gh-full-blockquote {
+    margin: 1.68em 0 !important;
+    padding-left: 1.28em !important;
+    position: relative;
+}
+
+.gh-full-blockquote  blockquote {
+    position: static;
+}
+
+.gh-full-blockquote blockquote::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 2.5px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--text-color-h2);
+    background-image: var(--gradient-h2);
+}
+
 :root {
     --color-mode: "light";
     --bg-hsl: 30, 27.27%, 95.69%;
