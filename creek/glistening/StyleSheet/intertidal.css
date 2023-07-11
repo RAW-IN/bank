@@ -7550,6 +7550,7 @@ section.next-story {
 .visualization {
     height: 720px;
     filter: var(--img-dar-ft);
+    margin: 1.58em 0;
 }
 
 .ftilter {
