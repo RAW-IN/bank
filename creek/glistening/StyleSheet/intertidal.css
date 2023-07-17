@@ -7588,6 +7588,46 @@ section.next-story {
     background-image: var(--gradient-h2);
 }
 
+a.benefit_exclusively {
+    display: block;
+    cursor: pointer;
+    color: var(--wb);
+    line-height: 1.28;
+    padding: 15px;
+    background: var(--text-color-h1);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    font-style: italic;
+
+}
+
+a.benefit_exclusively.footnote {
+    margin-top: -.3em;
+    margin-bottom: 1.58em;
+}
+
+@media screen and (min-width: 1024px) {
+    a.benefit_exclusively.footnote {
+        margin-bottom: 0;
+    }
+}
+
+.text__e4ad3cfd {
+    display: inline;
+    margin-right: 1px;
+    font-weight: 300;
+    font-family: 'fell';
+}
+
+.text__b718e2ef {
+    display: inline;
+    text-decoration: underline;
+    font-weight: 400;
+    font-family: 'fell';
+}
+
 :root {
     --color-mode: "light";
     --bg-hsl: 30, 27.27%, 95.69%;
