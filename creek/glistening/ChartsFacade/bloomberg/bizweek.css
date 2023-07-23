@@ -2162,7 +2162,8 @@
     font-size: 15.3px;
     line-height: 1.27;
     color: #000;
-        text-align: start;
+    text-align: start;
+    margin: .27em 0 .38em 0;
 }
 .bloomberg-chart .chart__source, .bloomberg-chart .chart__footnote, .chart__source, .chart__footnote {
     font-style: normal;
@@ -2170,7 +2171,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 1.25;
-    margin-top: .28em;
+    margin-top: .25em;
     margin-bottom: 0;
     color: #000;
         text-align: start;
@@ -2184,5 +2185,8 @@
 }
 
 .bloomberg-chart {
-    filter: var(--img-dar-wb);
+    filter: var(--img-dar-bloomberg);
+    border-top: 2px dotted var(--text-color);
+    border-bottom: 2px dotted var(--text-color);
+    padding: 1em 0;
 }

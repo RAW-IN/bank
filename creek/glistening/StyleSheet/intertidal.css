@@ -7732,6 +7732,8 @@ a.benefit_exclusively.footnote {
         --bg-rgb-ft: 26 24 23;
         --featured-ft: 156 211 33;
         --img-dar-ft: invert(80%) brightness(80%);
+        --featured-bloomberg: 8 113 50;
+        --img-dar-bloomberg: invert(90%) brightness(59%) hue-rotate(100deg);
         --featured-duan: 237 210 5;
         --mixxbm: var(--mixxbmd);
     }
@@ -7787,6 +7789,8 @@ a.benefit_exclusively.footnote {
     --bg-rgb-ft: 26 24 23;
     --featured-ft: 156 211 33;
     --img-dar-ft: invert(80%) brightness(80%);
+    --featured-bloomberg: 8 113 50;
+    --img-dar-bloomberg: invert(90%) brightness(59%) hue-rotate(100deg);
     --featured-duan: 237 210 5;
     --mixxbm: var(--mixxbmd);
 }
