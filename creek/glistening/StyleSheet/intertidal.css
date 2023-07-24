@@ -7675,6 +7675,7 @@ a.benefit_exclusively.footnote {
     --bg-rgb-wb: 255 255 255;
     --bg-rgb-ft: 255 241 229;
     --featured-ft: 153 15 61;
+    --featured-bloomberg: 0 120 255;
     --featured-duan: 3 191 215;
     --mixxbm: var(--mixxbml);
 }
