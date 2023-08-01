@@ -7628,6 +7628,41 @@ a.benefit_exclusively.footnote {
     font-family: 'fell';
 }
 
+.jw-audio {
+    float: left;
+    margin: clamp(0.5rem,0.4471rem + 0.1976vw,0.625rem) 1em 0.58em 0;
+    max-width: 200px;
+    width: 40%;
+    min-width: 120px;
+        filter: var(--img-dar)
+}
+
+.jw-audio .jw-title-primary {
+    font: var(--text-font);
+    font-size: 1.625em;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+
+.jw-audio .component-card {
+    background-color: var(--color-primary);
+    padding-top: 100%;
+    aspect-ratio: 1;
+}
+.jw-audio div#jw8 {
+    position: absolute;
+    top: 0;
+}
+
+div#jw8 {
+opacity: 1;
+    animation-name: fadeIn;
+    animation-duration: 1500ms;
+    animation-timing-function: cubic-bezier(0,0,.4,1);
+    animation-fill-mode: forwards;
+    transition: opacity 1500ms,filter 1500ms;
+}
+
 :root {
     --color-mode: "light";
     --bg-hsl: 30, 27.27%, 95.69%;
